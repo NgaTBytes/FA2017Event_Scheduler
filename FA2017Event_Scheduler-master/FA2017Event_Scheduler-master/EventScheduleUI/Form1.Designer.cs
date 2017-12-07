@@ -1,6 +1,6 @@
 ﻿namespace EventScheduleUI
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.

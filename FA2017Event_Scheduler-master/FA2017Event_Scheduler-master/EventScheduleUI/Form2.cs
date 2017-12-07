@@ -11,20 +11,14 @@ using System.Windows.Forms;
 
 namespace EventScheduleUI
 {
-    public partial class Form2 : Form
+    public partial class Tabs : Form
     {
-        public Form2()
+        public bool[] isChecked = new bool[10];
+        public Tabs()
         {
             InitializeComponent();
             //tabTab.TabPages.Remove(tabListView);
-            string[,] exampleArray = new string[2, 11];
-            for(int i = 0; i < exampleArray.GetLength(0); i++)
-            {
-                for (int j = 0; j < exampleArray.GetLength(1); j++)
-                {
-                    exampleArray[i, j] = "3";
-                }
-            }
+
         }
 
         private void tabListView_Click(object sender, EventArgs e)
@@ -51,79 +45,62 @@ namespace EventScheduleUI
 
         private void btnExecute_Click(object sender, EventArgs e)
         {
-            Form4 f4 = new Form4();
-            f4.ShowDialog();
+            ListView listview = new ListView();
+            listview.checkboxes = this;
 
-            //DataTable viewSelection = new DataTable();
-            //this.dgvViewSelection.Columns["EventName"].Visible = false;
-            //int[] whatsClicked = new int[10];
-            //int counter = 0;
-            //if(chkEventName.Checked)
-            //{
-            //    whatsClicked[counter] = 1;
-            //    counter++;
-            //    viewSelection.Columns.Add("Event Name",typeof (string));
 
-            //}
-            //if (chkLocation.Checked)
-            //{
-            //    whatsClicked[counter] = 2;
-            //    counter++;
-            //    viewSelection.Columns.Add("Location", typeof(string));
-            //}
-            //if (chkStartDate.Checked)
-            //{
-            //    whatsClicked[counter] = 3;
-            //    counter++;
-            //    viewSelection.Columns.Add("Start Date", typeof(DateTime));
-            //}
-            //if (chkEndDate.Checked)
-            //{
-            //    whatsClicked[counter] = 4;
-            //    counter++;
-            //    viewSelection.Columns.Add("End Date", typeof(DateTime));
-            //}
-            //if (chkStartTime.Checked)
-            //{
-            //    whatsClicked[counter] = 5;
-            //    counter++;
-            //    viewSelection.Columns.Add("Start Time", typeof(DateTime));
-            //}
-            //if (chkEndTime.Checked)
-            //{
-            //    whatsClicked[counter] = 6;
-            //    counter++;
-            //    viewSelection.Columns.Add("End Time", typeof(DateTime));
 
-            //}
-            //if (chkStatus.Checked)
-            //{
-            //    whatsClicked[counter] = 7;
-            //    counter++;
-            //    viewSelection.Columns.Add("Status", typeof(string));
-            //}
-            //if (chkNotes.Checked)
-            //{
-            //    whatsClicked[counter] = 8;
-            //    counter++;
-            //    viewSelection.Columns.Add("Notes", typeof(string));
-            //}
-            //if (chkDescription.Checked)
-            //{
-            //    whatsClicked[counter] = 9;
-            //    counter++;
-            //    viewSelection.Columns.Add("Description", typeof(string));
-            //}
-            //if (chkRegisteredMaxAttendees.Checked)
-            //{
-            //    whatsClicked[counter] = 10;
-            //    counter++;
-            //    viewSelection.Columns.Add("Registered/Max Attendees", typeof(int));
-            //}
-            //for (int i=0; i < whatsClicked.Length; i++)
-            //{
+            DataTable viewSelection = new DataTable();
+            int[] whatsClicked = new int[10];
 
-            //}
+            for (int i = 0; i > isChecked.Length; i++)
+            {
+                isChecked[i] = false;
+            }
+
+
+            if (chkEventName.Checked)
+            {
+                isChecked[0] = true;
+            }
+            if (chkLocation.Checked)
+            {
+                isChecked[1] = true;
+            }
+            if (chkStartDate.Checked)
+            {
+                isChecked[2] = true;
+            }
+            if (chkEndDate.Checked)
+            {
+                isChecked[3] = true;
+            }
+            if (chkStartTime.Checked)
+            {
+                isChecked[4] = true;
+            }
+            if (chkEndTime.Checked)
+            {
+                isChecked[5] = true;
+            }
+            if (chkStatus.Checked)
+            {
+                isChecked[6] = true;
+            }
+            if (chkNotes.Checked)
+            {
+                isChecked[7] = true;
+            }
+            if (chkDescription.Checked)
+            {
+                isChecked[8] = true;
+            }
+            if (chkRegisteredMaxAttendees.Checked)
+            {
+                isChecked[9] = true;
+            }
+            listview.ShowDialog();
+
 
         }
     }

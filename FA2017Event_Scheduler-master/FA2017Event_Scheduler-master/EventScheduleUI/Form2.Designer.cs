@@ -1,6 +1,6 @@
 ﻿namespace EventScheduleUI
 {
-    partial class Form2
+    partial class Tabs
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace EventScheduleUI
 {
-    partial class Form4
+    partial class ListView
     {
         /// <summary>
         /// Required designer variable.

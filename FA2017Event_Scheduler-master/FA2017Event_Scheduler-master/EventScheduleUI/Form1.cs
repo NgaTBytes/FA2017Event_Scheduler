@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EventScheduleUI
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -25,16 +25,17 @@ namespace EventScheduleUI
         private void btnLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 f2 = new Form2();       
+            Tabs f2 = new Tabs();
             f2.ShowDialog();
-            
+
         }
 
         private void lnkRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            Form3 f3 = new Form3();
+            Register f3 = new Register();
             f3.ShowDialog();
+
         }
     }
 }
