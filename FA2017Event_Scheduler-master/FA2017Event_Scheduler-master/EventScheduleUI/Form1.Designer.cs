@@ -98,7 +98,7 @@
             this.lnkRegister.TabIndex = 6;
             this.lnkRegister.TabStop = true;
             this.lnkRegister.Text = "Register";
-            this.lnkRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRegister_LinkClicked);
+
             // 
             // Form1
             // 
