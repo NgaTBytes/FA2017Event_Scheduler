@@ -31,3 +31,14 @@ C:\Users\programmer\Source\Repos\NewRepo2\FA2017Event_Scheduler-master\FA2017Eve
 C:\Users\programmer\Source\Repos\NewRepo2\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.ListView.resources
 C:\Users\programmer\Source\Repos\NewRepo2\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.Properties.Resources.resources
 C:\Users\programmer\Source\Repos\NewRepo2\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.csproj.GenerateResource.Cache
+C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler12\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\bin\Debug\EventScheduleUI.exe.config
+C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler12\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.exe
+C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler12\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.pdb
+C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler12\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.csprojResolveAssemblyReference.cache
+C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler12\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.Login.resources
+C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler12\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.Tabs.resources
+C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler12\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.ListView.resources
+C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler12\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.Properties.Resources.resources
+C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler12\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.csproj.GenerateResource.Cache
+C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler12\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\bin\Debug\EventScheduleUI.exe
+C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler12\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\bin\Debug\EventScheduleUI.pdb
