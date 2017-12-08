@@ -28,9 +28,12 @@ namespace EventScheduleUI
             Tabs f2 = new Tabs();
             ListView f4 = new ListView();
             f2.ShowDialog();
-
+            Environment.Exit(0);
         }
 
-        
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
