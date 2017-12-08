@@ -13,7 +13,7 @@ namespace EventScheduleUI
     public partial class ListView : Form
     {
 
-        public Tabs checkboxes;
+        public Tabs checkboxes = new Tabs();
         public ListView()
         {
             InitializeComponent();
@@ -21,7 +21,8 @@ namespace EventScheduleUI
             //this.dgvViewSelection.Columns["EventName"].Visible = false;
             try
             {
-                if (checkboxes.isChecked[0])
+
+                if (!checkboxes.isChecked[0])
                 {
                     this.dgvViewSelection.Columns["EventName"].Visible = false;
                 }
