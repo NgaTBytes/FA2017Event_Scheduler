@@ -106,7 +106,7 @@
             this.Description});
             this.dgvFullView.Location = new System.Drawing.Point(0, 0);
             this.dgvFullView.Name = "dgvFullView";
-            this.dgvFullView.Size = new System.Drawing.Size(1422, 516);
+            this.dgvFullView.Size = new System.Drawing.Size(1432, 516);
             this.dgvFullView.TabIndex = 1;
             // 
             // tabTeaser
