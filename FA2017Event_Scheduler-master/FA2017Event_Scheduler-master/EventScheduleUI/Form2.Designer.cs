@@ -55,10 +55,17 @@
             this.chkStartTime = new System.Windows.Forms.CheckBox();
             this.chkRegisteredMaxAttendees = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TeaserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TeaserLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TeaserDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TeaserCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabTab.SuspendLayout();
             this.tabFull.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFullView)).BeginInit();
+            this.tabTeaser.SuspendLayout();
             this.tabListView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabTab
@@ -66,21 +73,19 @@
             this.tabTab.Controls.Add(this.tabFull);
             this.tabTab.Controls.Add(this.tabTeaser);
             this.tabTab.Controls.Add(this.tabListView);
-            this.tabTab.Location = new System.Drawing.Point(-3, 5);
-            this.tabTab.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabTab.Location = new System.Drawing.Point(-2, 3);
             this.tabTab.Name = "tabTab";
             this.tabTab.SelectedIndex = 0;
-            this.tabTab.Size = new System.Drawing.Size(1854, 946);
+            this.tabTab.Size = new System.Drawing.Size(1236, 615);
             this.tabTab.TabIndex = 0;
             // 
             // tabFull
             // 
             this.tabFull.Controls.Add(this.dgvFullView);
-            this.tabFull.Location = new System.Drawing.Point(4, 29);
-            this.tabFull.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabFull.Location = new System.Drawing.Point(4, 22);
             this.tabFull.Name = "tabFull";
-            this.tabFull.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabFull.Size = new System.Drawing.Size(1846, 913);
+            this.tabFull.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabFull.Size = new System.Drawing.Size(1228, 589);
             this.tabFull.TabIndex = 0;
             this.tabFull.Text = "Full View";
             this.tabFull.UseVisualStyleBackColor = true;
@@ -99,10 +104,9 @@
             this.Attendees,
             this.Notes,
             this.Description});
-            this.dgvFullView.Location = new System.Drawing.Point(15, 9);
-            this.dgvFullView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvFullView.Location = new System.Drawing.Point(10, 6);
             this.dgvFullView.Name = "dgvFullView";
-            this.dgvFullView.Size = new System.Drawing.Size(1803, 794);
+            this.dgvFullView.Size = new System.Drawing.Size(1202, 516);
             this.dgvFullView.TabIndex = 1;
             // 
             // EventName
@@ -157,11 +161,11 @@
             // 
             // tabTeaser
             // 
-            this.tabTeaser.Location = new System.Drawing.Point(4, 29);
-            this.tabTeaser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabTeaser.Controls.Add(this.dataGridView1);
+            this.tabTeaser.Location = new System.Drawing.Point(4, 22);
             this.tabTeaser.Name = "tabTeaser";
-            this.tabTeaser.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabTeaser.Size = new System.Drawing.Size(1846, 913);
+            this.tabTeaser.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabTeaser.Size = new System.Drawing.Size(1228, 589);
             this.tabTeaser.TabIndex = 1;
             this.tabTeaser.Text = "Teaser View";
             this.tabTeaser.UseVisualStyleBackColor = true;
@@ -180,11 +184,10 @@
             this.tabListView.Controls.Add(this.chkStartTime);
             this.tabListView.Controls.Add(this.chkRegisteredMaxAttendees);
             this.tabListView.Controls.Add(this.label1);
-            this.tabListView.Location = new System.Drawing.Point(4, 29);
-            this.tabListView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabListView.Location = new System.Drawing.Point(4, 22);
             this.tabListView.Name = "tabListView";
-            this.tabListView.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabListView.Size = new System.Drawing.Size(1846, 913);
+            this.tabListView.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabListView.Size = new System.Drawing.Size(1228, 589);
             this.tabListView.TabIndex = 2;
             this.tabListView.Text = "List View";
             this.tabListView.UseVisualStyleBackColor = true;
@@ -193,10 +196,9 @@
             // btnExecute
             // 
             this.btnExecute.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.btnExecute.Location = new System.Drawing.Point(410, 555);
-            this.btnExecute.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnExecute.Location = new System.Drawing.Point(273, 361);
             this.btnExecute.Name = "btnExecute";
-            this.btnExecute.Size = new System.Drawing.Size(508, 97);
+            this.btnExecute.Size = new System.Drawing.Size(339, 63);
             this.btnExecute.TabIndex = 11;
             this.btnExecute.Text = "View Selection";
             this.btnExecute.UseVisualStyleBackColor = true;
@@ -206,10 +208,9 @@
             // 
             this.chkEndDate.AutoSize = true;
             this.chkEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.chkEndDate.Location = new System.Drawing.Point(996, 243);
-            this.chkEndDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkEndDate.Location = new System.Drawing.Point(664, 158);
             this.chkEndDate.Name = "chkEndDate";
-            this.chkEndDate.Size = new System.Drawing.Size(138, 33);
+            this.chkEndDate.Size = new System.Drawing.Size(107, 28);
             this.chkEndDate.TabIndex = 10;
             this.chkEndDate.Text = "End Date";
             this.chkEndDate.UseVisualStyleBackColor = true;
@@ -218,10 +219,9 @@
             // 
             this.chkStartDate.AutoSize = true;
             this.chkStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.chkStartDate.Location = new System.Drawing.Point(765, 243);
-            this.chkStartDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkStartDate.Location = new System.Drawing.Point(510, 158);
             this.chkStartDate.Name = "chkStartDate";
-            this.chkStartDate.Size = new System.Drawing.Size(144, 33);
+            this.chkStartDate.Size = new System.Drawing.Size(108, 28);
             this.chkStartDate.TabIndex = 9;
             this.chkStartDate.Text = "Start Date";
             this.chkStartDate.UseVisualStyleBackColor = true;
@@ -230,10 +230,9 @@
             // 
             this.chkLocation.AutoSize = true;
             this.chkLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.chkLocation.Location = new System.Drawing.Point(520, 243);
-            this.chkLocation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkLocation.Location = new System.Drawing.Point(347, 158);
             this.chkLocation.Name = "chkLocation";
-            this.chkLocation.Size = new System.Drawing.Size(130, 33);
+            this.chkLocation.Size = new System.Drawing.Size(100, 28);
             this.chkLocation.TabIndex = 8;
             this.chkLocation.Text = "Location";
             this.chkLocation.UseVisualStyleBackColor = true;
@@ -242,10 +241,9 @@
             // 
             this.chkEventName.AutoSize = true;
             this.chkEventName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.chkEventName.Location = new System.Drawing.Point(272, 243);
-            this.chkEventName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkEventName.Location = new System.Drawing.Point(181, 158);
             this.chkEventName.Name = "chkEventName";
-            this.chkEventName.Size = new System.Drawing.Size(170, 33);
+            this.chkEventName.Size = new System.Drawing.Size(133, 28);
             this.chkEventName.TabIndex = 7;
             this.chkEventName.Text = "Event Name";
             this.chkEventName.UseVisualStyleBackColor = true;
@@ -255,10 +253,9 @@
             // 
             this.chkEndTime.AutoSize = true;
             this.chkEndTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.chkEndTime.Location = new System.Drawing.Point(272, 409);
-            this.chkEndTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkEndTime.Location = new System.Drawing.Point(181, 266);
             this.chkEndTime.Name = "chkEndTime";
-            this.chkEndTime.Size = new System.Drawing.Size(144, 33);
+            this.chkEndTime.Size = new System.Drawing.Size(112, 28);
             this.chkEndTime.TabIndex = 6;
             this.chkEndTime.Text = "End Time";
             this.chkEndTime.UseVisualStyleBackColor = true;
@@ -267,10 +264,9 @@
             // 
             this.chkStatus.AutoSize = true;
             this.chkStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.chkStatus.Location = new System.Drawing.Point(520, 409);
-            this.chkStatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkStatus.Location = new System.Drawing.Point(347, 266);
             this.chkStatus.Name = "chkStatus";
-            this.chkStatus.Size = new System.Drawing.Size(105, 33);
+            this.chkStatus.Size = new System.Drawing.Size(79, 28);
             this.chkStatus.TabIndex = 5;
             this.chkStatus.Text = "Status";
             this.chkStatus.UseVisualStyleBackColor = true;
@@ -279,10 +275,9 @@
             // 
             this.chkNotes.AutoSize = true;
             this.chkNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.chkNotes.Location = new System.Drawing.Point(765, 409);
-            this.chkNotes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkNotes.Location = new System.Drawing.Point(510, 266);
             this.chkNotes.Name = "chkNotes";
-            this.chkNotes.Size = new System.Drawing.Size(103, 33);
+            this.chkNotes.Size = new System.Drawing.Size(78, 28);
             this.chkNotes.TabIndex = 4;
             this.chkNotes.Text = "Notes";
             this.chkNotes.UseVisualStyleBackColor = true;
@@ -291,10 +286,9 @@
             // 
             this.chkDescription.AutoSize = true;
             this.chkDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.chkDescription.Location = new System.Drawing.Point(996, 409);
-            this.chkDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkDescription.Location = new System.Drawing.Point(664, 266);
             this.chkDescription.Name = "chkDescription";
-            this.chkDescription.Size = new System.Drawing.Size(161, 33);
+            this.chkDescription.Size = new System.Drawing.Size(123, 28);
             this.chkDescription.TabIndex = 3;
             this.chkDescription.Text = "Description";
             this.chkDescription.UseVisualStyleBackColor = true;
@@ -303,10 +297,9 @@
             // 
             this.chkStartTime.AutoSize = true;
             this.chkStartTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.chkStartTime.Location = new System.Drawing.Point(1227, 243);
-            this.chkStartTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkStartTime.Location = new System.Drawing.Point(818, 158);
             this.chkStartTime.Name = "chkStartTime";
-            this.chkStartTime.Size = new System.Drawing.Size(150, 33);
+            this.chkStartTime.Size = new System.Drawing.Size(113, 28);
             this.chkStartTime.TabIndex = 2;
             this.chkStartTime.Text = "Start Time";
             this.chkStartTime.UseVisualStyleBackColor = true;
@@ -315,10 +308,9 @@
             // 
             this.chkRegisteredMaxAttendees.AutoSize = true;
             this.chkRegisteredMaxAttendees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.chkRegisteredMaxAttendees.Location = new System.Drawing.Point(1227, 409);
-            this.chkRegisteredMaxAttendees.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkRegisteredMaxAttendees.Location = new System.Drawing.Point(818, 266);
             this.chkRegisteredMaxAttendees.Name = "chkRegisteredMaxAttendees";
-            this.chkRegisteredMaxAttendees.Size = new System.Drawing.Size(323, 33);
+            this.chkRegisteredMaxAttendees.Size = new System.Drawing.Size(251, 28);
             this.chkRegisteredMaxAttendees.TabIndex = 1;
             this.chkRegisteredMaxAttendees.Text = "Registered/Max Attendees";
             this.chkRegisteredMaxAttendees.UseVisualStyleBackColor = true;
@@ -327,27 +319,64 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.Location = new System.Drawing.Point(262, 62);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(175, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(482, 46);
+            this.label1.Size = new System.Drawing.Size(368, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "What do you want to see?";
             // 
-            // Form2
+            // dataGridView1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TeaserName,
+            this.TeaserLocation,
+            this.TeaserDate,
+            this.TeaserCategory});
+            this.dataGridView1.Location = new System.Drawing.Point(11, 7);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1211, 573);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // TeaserName
+            // 
+            this.TeaserName.HeaderText = "Event Name";
+            this.TeaserName.Name = "TeaserName";
+            this.TeaserName.Width = 280;
+            // 
+            // TeaserLocation
+            // 
+            this.TeaserLocation.HeaderText = "Location";
+            this.TeaserLocation.Name = "TeaserLocation";
+            this.TeaserLocation.Width = 280;
+            // 
+            // TeaserDate
+            // 
+            this.TeaserDate.HeaderText = "Date";
+            this.TeaserDate.Name = "TeaserDate";
+            this.TeaserDate.Width = 280;
+            // 
+            // TeaserCategory
+            // 
+            this.TeaserCategory.HeaderText = "Category";
+            this.TeaserCategory.Name = "TeaserCategory";
+            this.TeaserCategory.Width = 280;
+            // 
+            // Tabs
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1869, 949);
+            this.ClientSize = new System.Drawing.Size(1259, 617);
             this.Controls.Add(this.tabTab);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form2";
+            this.Name = "Tabs";
             this.Text = "Form2";
             this.tabTab.ResumeLayout(false);
             this.tabFull.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFullView)).EndInit();
+            this.tabTeaser.ResumeLayout(false);
             this.tabListView.ResumeLayout(false);
             this.tabListView.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -381,6 +410,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox chkEventName;
         private System.Windows.Forms.Button btnExecute;
-        
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TeaserName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TeaserLocation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TeaserDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TeaserCategory;
     }
 }
