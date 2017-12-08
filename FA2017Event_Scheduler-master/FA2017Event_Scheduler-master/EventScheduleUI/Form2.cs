@@ -13,6 +13,7 @@ namespace EventScheduleUI
 {
     public partial class Tabs : Form
     {
+
         public bool[] isChecked = new bool[10];
         public Tabs()
         {
@@ -43,17 +44,17 @@ namespace EventScheduleUI
 
         }
 
-        private void btnExecute_Click(object sender, EventArgs e)
+        public void btnExecute_Click(object sender, EventArgs e)
         {
-            ListView listview = new ListView();
-            listview.checkboxes = this;
+            
+            
 
 
 
             DataTable viewSelection = new DataTable();
             int[] whatsClicked = new int[10];
 
-            for (int i = 0; i > isChecked.Length; i++)
+            for (int i = 0; i < isChecked.Length; i++)
             {
                 isChecked[i] = false;
             }
@@ -99,6 +100,7 @@ namespace EventScheduleUI
             {
                 isChecked[9] = true;
             }
+            ListView listview = new ListView();
             listview.ShowDialog();
 
 

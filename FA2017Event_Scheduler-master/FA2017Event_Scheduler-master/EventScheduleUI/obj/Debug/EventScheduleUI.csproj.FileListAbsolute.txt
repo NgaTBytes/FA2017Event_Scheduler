@@ -12,3 +12,11 @@ C:\Users\NgaT\Downloads\FA2017Event_Scheduler-master\FA2017Event_Scheduler-maste
 C:\Users\Piercer_of_Shadows\Source\Repos\FA2017Event_Scheduler\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\bin\Debug\EventScheduleUI.exe.config
 C:\Users\Piercer_of_Shadows\Source\Repos\FA2017Event_Scheduler\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.exe
 C:\Users\Piercer_of_Shadows\Source\Repos\FA2017Event_Scheduler\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.pdb
+C:\Users\Piercer_of_Shadows\Source\Repos\FA2017Event_Scheduler\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\bin\Debug\EventScheduleUI.exe
+C:\Users\Piercer_of_Shadows\Source\Repos\FA2017Event_Scheduler\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\bin\Debug\EventScheduleUI.pdb
+C:\Users\Piercer_of_Shadows\Source\Repos\FA2017Event_Scheduler\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.csprojResolveAssemblyReference.cache
+C:\Users\Piercer_of_Shadows\Source\Repos\FA2017Event_Scheduler\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.Login.resources
+C:\Users\Piercer_of_Shadows\Source\Repos\FA2017Event_Scheduler\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.Tabs.resources
+C:\Users\Piercer_of_Shadows\Source\Repos\FA2017Event_Scheduler\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.ListView.resources
+C:\Users\Piercer_of_Shadows\Source\Repos\FA2017Event_Scheduler\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.Properties.Resources.resources
+C:\Users\Piercer_of_Shadows\Source\Repos\FA2017Event_Scheduler\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.csproj.GenerateResource.Cache

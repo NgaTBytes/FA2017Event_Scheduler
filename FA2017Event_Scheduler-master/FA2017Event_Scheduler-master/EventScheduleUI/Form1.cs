@@ -26,6 +26,7 @@ namespace EventScheduleUI
         {
             this.Hide();
             Tabs f2 = new Tabs();
+            ListView f4 = new ListView();
             f2.ShowDialog();
 
         }
