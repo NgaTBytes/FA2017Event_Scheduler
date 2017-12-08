@@ -31,17 +31,12 @@
             this.tabTab = new System.Windows.Forms.TabControl();
             this.tabFull = new System.Windows.Forms.TabPage();
             this.dgvFullView = new System.Windows.Forms.DataGridView();
-            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Attendees = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabTeaser = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TeaserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TeaserLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TeaserDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TeaserCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabListView = new System.Windows.Forms.TabPage();
             this.btnExecute = new System.Windows.Forms.Button();
             this.chkEndDate = new System.Windows.Forms.CheckBox();
@@ -55,17 +50,22 @@
             this.chkStartTime = new System.Windows.Forms.CheckBox();
             this.chkRegisteredMaxAttendees = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TeaserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TeaserLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TeaserDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TeaserCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Attendees = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabTab.SuspendLayout();
             this.tabFull.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFullView)).BeginInit();
             this.tabTeaser.SuspendLayout();
-            this.tabListView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabListView.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabTab
@@ -73,10 +73,10 @@
             this.tabTab.Controls.Add(this.tabFull);
             this.tabTab.Controls.Add(this.tabTeaser);
             this.tabTab.Controls.Add(this.tabListView);
-            this.tabTab.Location = new System.Drawing.Point(-2, 3);
+            this.tabTab.Location = new System.Drawing.Point(25, 12);
             this.tabTab.Name = "tabTab";
             this.tabTab.SelectedIndex = 0;
-            this.tabTab.Size = new System.Drawing.Size(1236, 615);
+            this.tabTab.Size = new System.Drawing.Size(1447, 615);
             this.tabTab.TabIndex = 0;
             // 
             // tabFull
@@ -84,8 +84,8 @@
             this.tabFull.Controls.Add(this.dgvFullView);
             this.tabFull.Location = new System.Drawing.Point(4, 22);
             this.tabFull.Name = "tabFull";
-            this.tabFull.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabFull.Size = new System.Drawing.Size(1228, 589);
+            this.tabFull.Padding = new System.Windows.Forms.Padding(3);
+            this.tabFull.Size = new System.Drawing.Size(1439, 589);
             this.tabFull.TabIndex = 0;
             this.tabFull.Text = "Full View";
             this.tabFull.UseVisualStyleBackColor = true;
@@ -104,71 +104,58 @@
             this.Attendees,
             this.Notes,
             this.Description});
-            this.dgvFullView.Location = new System.Drawing.Point(10, 6);
+            this.dgvFullView.Location = new System.Drawing.Point(0, 0);
             this.dgvFullView.Name = "dgvFullView";
-            this.dgvFullView.Size = new System.Drawing.Size(1202, 516);
+            this.dgvFullView.Size = new System.Drawing.Size(1422, 516);
             this.dgvFullView.TabIndex = 1;
-            // 
-            // EventName
-            // 
-            this.EventName.HeaderText = "Event Name";
-            this.EventName.Name = "EventName";
-            // 
-            // Location
-            // 
-            this.Location.HeaderText = "Location";
-            this.Location.Name = "Location";
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            // 
-            // StartDate
-            // 
-            this.StartDate.HeaderText = "Start Date";
-            this.StartDate.Name = "StartDate";
-            // 
-            // EndDate
-            // 
-            this.EndDate.HeaderText = "End Date";
-            this.EndDate.Name = "EndDate";
-            // 
-            // StartTime
-            // 
-            this.StartTime.HeaderText = "Start Time";
-            this.StartTime.Name = "StartTime";
-            // 
-            // EndTime
-            // 
-            this.EndTime.HeaderText = "End Time";
-            this.EndTime.Name = "EndTime";
-            // 
-            // Attendees
-            // 
-            this.Attendees.HeaderText = "Registered/Max  Attendees";
-            this.Attendees.Name = "Attendees";
-            // 
-            // Notes
-            // 
-            this.Notes.HeaderText = "Notes";
-            this.Notes.Name = "Notes";
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
             // 
             // tabTeaser
             // 
             this.tabTeaser.Controls.Add(this.dataGridView1);
             this.tabTeaser.Location = new System.Drawing.Point(4, 22);
             this.tabTeaser.Name = "tabTeaser";
-            this.tabTeaser.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabTeaser.Padding = new System.Windows.Forms.Padding(3);
             this.tabTeaser.Size = new System.Drawing.Size(1228, 589);
             this.tabTeaser.TabIndex = 1;
             this.tabTeaser.Text = "Teaser View";
             this.tabTeaser.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TeaserName,
+            this.TeaserLocation,
+            this.TeaserDate,
+            this.TeaserCategory});
+            this.dataGridView1.Location = new System.Drawing.Point(11, 7);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1211, 573);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // TeaserName
+            // 
+            this.TeaserName.HeaderText = "Event Name";
+            this.TeaserName.Name = "TeaserName";
+            this.TeaserName.Width = 280;
+            // 
+            // TeaserLocation
+            // 
+            this.TeaserLocation.HeaderText = "Location";
+            this.TeaserLocation.Name = "TeaserLocation";
+            this.TeaserLocation.Width = 280;
+            // 
+            // TeaserDate
+            // 
+            this.TeaserDate.HeaderText = "Date";
+            this.TeaserDate.Name = "TeaserDate";
+            this.TeaserDate.Width = 280;
+            // 
+            // TeaserCategory
+            // 
+            this.TeaserCategory.HeaderText = "Category";
+            this.TeaserCategory.Name = "TeaserCategory";
+            this.TeaserCategory.Width = 280;
             // 
             // tabListView
             // 
@@ -186,8 +173,8 @@
             this.tabListView.Controls.Add(this.label1);
             this.tabListView.Location = new System.Drawing.Point(4, 22);
             this.tabListView.Name = "tabListView";
-            this.tabListView.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabListView.Size = new System.Drawing.Size(1228, 589);
+            this.tabListView.Padding = new System.Windows.Forms.Padding(3);
+            this.tabListView.Size = new System.Drawing.Size(1439, 589);
             this.tabListView.TabIndex = 2;
             this.tabListView.Text = "List View";
             this.tabListView.UseVisualStyleBackColor = true;
@@ -325,48 +312,66 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "What do you want to see?";
             // 
-            // dataGridView1
+            // EventName
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TeaserName,
-            this.TeaserLocation,
-            this.TeaserDate,
-            this.TeaserCategory});
-            this.dataGridView1.Location = new System.Drawing.Point(11, 7);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1211, 573);
-            this.dataGridView1.TabIndex = 0;
+            this.EventName.HeaderText = "Event Name";
+            this.EventName.Name = "EventName";
+            this.EventName.Width = 200;
             // 
-            // TeaserName
+            // Location
             // 
-            this.TeaserName.HeaderText = "Event Name";
-            this.TeaserName.Name = "TeaserName";
-            this.TeaserName.Width = 280;
+            this.Location.HeaderText = "Location";
+            this.Location.Name = "Location";
+            this.Location.Width = 150;
             // 
-            // TeaserLocation
+            // Status
             // 
-            this.TeaserLocation.HeaderText = "Location";
-            this.TeaserLocation.Name = "TeaserLocation";
-            this.TeaserLocation.Width = 280;
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
             // 
-            // TeaserDate
+            // StartDate
             // 
-            this.TeaserDate.HeaderText = "Date";
-            this.TeaserDate.Name = "TeaserDate";
-            this.TeaserDate.Width = 280;
+            this.StartDate.HeaderText = "Start Date";
+            this.StartDate.Name = "StartDate";
+            this.StartDate.Width = 75;
             // 
-            // TeaserCategory
+            // EndDate
             // 
-            this.TeaserCategory.HeaderText = "Category";
-            this.TeaserCategory.Name = "TeaserCategory";
-            this.TeaserCategory.Width = 280;
+            this.EndDate.HeaderText = "End Date";
+            this.EndDate.Name = "EndDate";
+            this.EndDate.Width = 75;
+            // 
+            // StartTime
+            // 
+            this.StartTime.HeaderText = "Start Time";
+            this.StartTime.Name = "StartTime";
+            // 
+            // EndTime
+            // 
+            this.EndTime.HeaderText = "End Time";
+            this.EndTime.Name = "EndTime";
+            // 
+            // Attendees
+            // 
+            this.Attendees.HeaderText = "Registered/Max  Attendees";
+            this.Attendees.Name = "Attendees";
+            // 
+            // Notes
+            // 
+            this.Notes.HeaderText = "Notes";
+            this.Notes.Name = "Notes";
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.Width = 400;
             // 
             // Tabs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1259, 617);
+            this.ClientSize = new System.Drawing.Size(1473, 617);
             this.Controls.Add(this.tabTab);
             this.Name = "Tabs";
             this.Text = "Form2";
@@ -374,9 +379,9 @@
             this.tabFull.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFullView)).EndInit();
             this.tabTeaser.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabListView.ResumeLayout(false);
             this.tabListView.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -388,16 +393,6 @@
         private System.Windows.Forms.TabPage tabTeaser;
         private System.Windows.Forms.TabPage tabListView;
         private System.Windows.Forms.DataGridView dgvFullView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EventName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Location;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EndTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Attendees;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Notes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.CheckBox chkEndDate;
         private System.Windows.Forms.CheckBox chkStartDate;
         private System.Windows.Forms.CheckBox chkLocation;
@@ -415,5 +410,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TeaserLocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn TeaserDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn TeaserCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Location;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Attendees;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Notes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
     }
 }
