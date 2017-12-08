@@ -20,3 +20,6 @@ C:\Users\Piercer_of_Shadows\Source\Repos\FA2017Event_Scheduler\FA2017Event_Sched
 C:\Users\Piercer_of_Shadows\Source\Repos\FA2017Event_Scheduler\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.ListView.resources
 C:\Users\Piercer_of_Shadows\Source\Repos\FA2017Event_Scheduler\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.Properties.Resources.resources
 C:\Users\Piercer_of_Shadows\Source\Repos\FA2017Event_Scheduler\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.csproj.GenerateResource.Cache
+C:\Users\programmer\Source\Repos\NewRepo2\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\bin\Debug\EventScheduleUI.exe.config
+C:\Users\programmer\Source\Repos\NewRepo2\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.exe
+C:\Users\programmer\Source\Repos\NewRepo2\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.pdb
