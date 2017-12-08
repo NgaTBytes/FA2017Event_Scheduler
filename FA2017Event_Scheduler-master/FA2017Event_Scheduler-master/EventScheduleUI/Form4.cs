@@ -21,7 +21,6 @@ namespace EventScheduleUI
             //this.dgvViewSelection.Columns["EventName"].Visible = false;
             try
             {
-
                 if (!checkboxes.isChecked[0])
                 {
                     this.dgvViewSelection.Columns["EventName"].Visible = false;
