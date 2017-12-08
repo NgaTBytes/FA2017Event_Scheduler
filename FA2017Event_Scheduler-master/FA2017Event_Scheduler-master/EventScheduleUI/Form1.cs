@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Data.SqlClient;
+
 namespace EventScheduleUI
 {
     public partial class Login : Form
@@ -24,11 +26,22 @@ namespace EventScheduleUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Tabs f2 = new Tabs();
-            ListView f4 = new ListView();
-            f2.ShowDialog();
-            Environment.Exit(0);
+            //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\C Programming\Class Project\EventScheduler.mdf;Integrated Security=True;Connect Timeout=30;");
+            //SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Users where Username ='" + txtUsername.Text + "' and Password ='" + txtPassword.Text + "'",con);
+            //DataTable dt = new DataTable();
+            //sda.Fill(dt);
+            //if (dt.Rows[0][0].ToString() == "1")
+            //{
+                this.Hide();
+                Tabs f2 = new Tabs();
+                ListView f4 = new ListView();
+                f2.ShowDialog();
+                Environment.Exit(0);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Please Check your Username and Password");
+            //}
         }
 
         private void btnExit_Click(object sender, EventArgs e)
