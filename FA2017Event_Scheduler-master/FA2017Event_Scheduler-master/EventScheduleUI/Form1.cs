@@ -31,12 +31,6 @@ namespace EventScheduleUI
 
         }
 
-        private void lnkRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-            Register f3 = new Register();
-            f3.ShowDialog();
-
-        }
+        
     }
 }
