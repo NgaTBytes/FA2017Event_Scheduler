@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Data.SqlClient;
+using Event_2017FA_CSOS_1320_001;
 
 namespace EventScheduleUI
 {
