@@ -140,8 +140,8 @@ namespace EventScheduleUI
             //{
             //    isChecked[9] = true;
             //}
-            ListView listview = new ListView();
-            listview.ShowDialog();
+            //ListView listview = new ListView();
+            //listview.ShowDialog();
 
 
 
