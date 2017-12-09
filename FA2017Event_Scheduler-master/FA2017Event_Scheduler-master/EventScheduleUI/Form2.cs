@@ -46,49 +46,53 @@ namespace EventScheduleUI
 
         private void btnExecute_Click(object sender, EventArgs e)
         {
+
             //data grid table is hidden until selection made
             this.dgvListView.Visible = true;
-            if (!chkEventName.Checked)
-            {
-                this.dgvListView.Columns["EventNameForm2"].Visible = false;
-            }
-            if (!chkLocation.Checked)
-            {
-                this.dgvListView.Columns["LocationForm2"].Visible = false;
-            }
-            if (!chkStartDate.Checked)
-            {
-                this.dgvListView.Columns["StartDateForm2"].Visible = false;
-            }
-            if (!chkEndDate.Checked)
-            {
-                this.dgvListView.Columns["EndDateForm2"].Visible = false;
-            }
-            if (!chkStartTime.Checked)
-            {
-                this.dgvListView.Columns["StartTimeForm2"].Visible = false;
-            }
-            if (!chkEndTime.Checked)
-            {
-                this.dgvListView.Columns["EndTimeForm2"].Visible = false;
-            }
-            if (!chkStatus.Checked)
-            {
-                this.dgvListView.Columns["StatusForm2"].Visible = false;
-            }
-            if (!chkNotes.Checked)
-            {
-                this.dgvListView.Columns["NotesForm2"].Visible = false;
-            }
-            if (!chkDescription.Checked)
-            {
-                this.dgvListView.Columns["DescriptionForm2"].Visible = false;
-            }
-            if (!chkRegisteredMaxAttendees.Checked)
-            {
-                this.dgvListView.Columns["AttendeesForm2"].Visible = false;
-            }
-
+            
+                if (!chkEventName.Checked)
+                {
+                    this.dgvListView.Columns["EventNameForm2"].Visible = false;
+                }
+                if (!chkLocation.Checked)
+                {
+                    this.dgvListView.Columns["LocationForm2"].Visible = false;
+                }
+                if (!chkStartDate.Checked)
+                {
+                    this.dgvListView.Columns["StartDateForm2"].Visible = false;
+                }
+                if (!chkEndDate.Checked)
+                {
+                    this.dgvListView.Columns["EndDateForm2"].Visible = false;
+                }
+                if (!chkStartTime.Checked)
+                {
+                    this.dgvListView.Columns["StartTimeForm2"].Visible = false;
+                }
+                if (!chkEndTime.Checked)
+                {
+                    this.dgvListView.Columns["EndTimeForm2"].Visible = false;
+                }
+                if (!chkStatus.Checked)
+                {
+                    this.dgvListView.Columns["StatusForm2"].Visible = false;
+                }
+                if (!chkNotes.Checked)
+                {
+                    this.dgvListView.Columns["NotesForm2"].Visible = false;
+                }
+                if (!chkDescription.Checked)
+                {
+                    this.dgvListView.Columns["DescriptionForm2"].Visible = false;
+                }
+                if (!chkRegisteredMaxAttendees.Checked)
+                {
+                    this.dgvListView.Columns["AttendeesForm2"].Visible = false;
+                }
+            
+            
+            
 
 
 
