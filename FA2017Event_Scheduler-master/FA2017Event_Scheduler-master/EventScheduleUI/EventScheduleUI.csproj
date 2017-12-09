@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Event_2017FA-CSOS-1320-001">
-      <HintPath>E:\C Programming\Class Project\NewRepo2\Event_2017FA-CSOS-1320-001\Event_2017FA-CSOS-1320-001\Event_2017FA-CSOS-1320-001\bin\Debug\Event_2017FA-CSOS-1320-001.dll</HintPath>
+      <HintPath>..\..\..\Event_2017FA-CSOS-1320-001\Event_2017FA-CSOS-1320-001\Event_2017FA-CSOS-1320-001\bin\Debug\Event_2017FA-CSOS-1320-001.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
