@@ -48,6 +48,17 @@
             this.TeaserDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TeaserCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabListView = new System.Windows.Forms.TabPage();
+            this.dgvListView = new System.Windows.Forms.DataGridView();
+            this.EventNameForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LocationForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDateForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndDateForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartTimeForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndTimeForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NotesForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescriptionForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AttendeesForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExecute = new System.Windows.Forms.Button();
             this.chkEndDate = new System.Windows.Forms.CheckBox();
             this.chkStartDate = new System.Windows.Forms.CheckBox();
@@ -60,17 +71,6 @@
             this.chkStartTime = new System.Windows.Forms.CheckBox();
             this.chkRegisteredMaxAttendees = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvListView = new System.Windows.Forms.DataGridView();
-            this.EventNameForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LocationForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDateForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndDateForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartTimeForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndTimeForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StatusForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NotesForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescriptionForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AttendeesForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabTab.SuspendLayout();
             this.tabFull.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFullView)).BeginInit();
@@ -254,6 +254,82 @@
             this.tabListView.UseVisualStyleBackColor = true;
             this.tabListView.Click += new System.EventHandler(this.tabListView_Click);
             // 
+            // dgvListView
+            // 
+            this.dgvListView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EventNameForm2,
+            this.LocationForm2,
+            this.StartDateForm2,
+            this.EndDateForm2,
+            this.StartTimeForm2,
+            this.EndTimeForm2,
+            this.StatusForm2,
+            this.NotesForm2,
+            this.DescriptionForm2,
+            this.AttendeesForm2});
+            this.dgvListView.Location = new System.Drawing.Point(8, 104);
+            this.dgvListView.Name = "dgvListView";
+            this.dgvListView.RowTemplate.Height = 28;
+            this.dgvListView.Size = new System.Drawing.Size(1221, 150);
+            this.dgvListView.TabIndex = 12;
+            this.dgvListView.Visible = false;
+            this.dgvListView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListView_CellContentClick);
+            // 
+            // EventNameForm2
+            // 
+            this.EventNameForm2.HeaderText = "Event Name";
+            this.EventNameForm2.Name = "EventNameForm2";
+            // 
+            // LocationForm2
+            // 
+            this.LocationForm2.HeaderText = "Location";
+            this.LocationForm2.Name = "LocationForm2";
+            // 
+            // StartDateForm2
+            // 
+            this.StartDateForm2.HeaderText = "Start Date";
+            this.StartDateForm2.Name = "StartDateForm2";
+            // 
+            // EndDateForm2
+            // 
+            this.EndDateForm2.HeaderText = "End Date";
+            this.EndDateForm2.Name = "EndDateForm2";
+            // 
+            // StartTimeForm2
+            // 
+            this.StartTimeForm2.HeaderText = "Start Time";
+            this.StartTimeForm2.Name = "StartTimeForm2";
+            // 
+            // EndTimeForm2
+            // 
+            this.EndTimeForm2.HeaderText = "End Time";
+            this.EndTimeForm2.Name = "EndTimeForm2";
+            // 
+            // StatusForm2
+            // 
+            this.StatusForm2.HeaderText = "Status";
+            this.StatusForm2.Name = "StatusForm2";
+            // 
+            // NotesForm2
+            // 
+            this.NotesForm2.HeaderText = "Notes";
+            this.NotesForm2.Name = "NotesForm2";
+            // 
+            // DescriptionForm2
+            // 
+            this.DescriptionForm2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DescriptionForm2.HeaderText = "Description";
+            this.DescriptionForm2.Name = "DescriptionForm2";
+            this.DescriptionForm2.Width = 125;
+            // 
+            // AttendeesForm2
+            // 
+            this.AttendeesForm2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.AttendeesForm2.HeaderText = "Registered/Max Attendees";
+            this.AttendeesForm2.Name = "AttendeesForm2";
+            this.AttendeesForm2.Width = 214;
+            // 
             // btnExecute
             // 
             this.btnExecute.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
@@ -397,80 +473,6 @@
             this.label1.Size = new System.Drawing.Size(360, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "What do you want to see?";
-            // 
-            // dgvListView
-            // 
-            this.dgvListView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EventNameForm2,
-            this.LocationForm2,
-            this.StartDateForm2,
-            this.EndDateForm2,
-            this.StartTimeForm2,
-            this.EndTimeForm2,
-            this.StatusForm2,
-            this.NotesForm2,
-            this.DescriptionForm2,
-            this.AttendeesForm2});
-            this.dgvListView.Location = new System.Drawing.Point(8, 104);
-            this.dgvListView.Name = "dgvListView";
-            this.dgvListView.RowTemplate.Height = 28;
-            this.dgvListView.Size = new System.Drawing.Size(1221, 150);
-            this.dgvListView.TabIndex = 12;
-            // 
-            // EventNameForm2
-            // 
-            this.EventNameForm2.HeaderText = "Event Name";
-            this.EventNameForm2.Name = "EventNameForm2";
-            // 
-            // LocationForm2
-            // 
-            this.LocationForm2.HeaderText = "Location";
-            this.LocationForm2.Name = "LocationForm2";
-            // 
-            // StartDateForm2
-            // 
-            this.StartDateForm2.HeaderText = "Start Date";
-            this.StartDateForm2.Name = "StartDateForm2";
-            // 
-            // EndDateForm2
-            // 
-            this.EndDateForm2.HeaderText = "End Date";
-            this.EndDateForm2.Name = "EndDateForm2";
-            // 
-            // StartTimeForm2
-            // 
-            this.StartTimeForm2.HeaderText = "Start Time";
-            this.StartTimeForm2.Name = "StartTimeForm2";
-            // 
-            // EndTimeForm2
-            // 
-            this.EndTimeForm2.HeaderText = "End Time";
-            this.EndTimeForm2.Name = "EndTimeForm2";
-            // 
-            // StatusForm2
-            // 
-            this.StatusForm2.HeaderText = "Status";
-            this.StatusForm2.Name = "StatusForm2";
-            // 
-            // NotesForm2
-            // 
-            this.NotesForm2.HeaderText = "Notes";
-            this.NotesForm2.Name = "NotesForm2";
-            // 
-            // DescriptionForm2
-            // 
-            this.DescriptionForm2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DescriptionForm2.HeaderText = "Description";
-            this.DescriptionForm2.Name = "DescriptionForm2";
-            this.DescriptionForm2.Width = 125;
-            // 
-            // AttendeesForm2
-            // 
-            this.AttendeesForm2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.AttendeesForm2.HeaderText = "Registered/Max Attendees";
-            this.AttendeesForm2.Name = "AttendeesForm2";
-            this.AttendeesForm2.Width = 214;
             // 
             // Tabs
             // 

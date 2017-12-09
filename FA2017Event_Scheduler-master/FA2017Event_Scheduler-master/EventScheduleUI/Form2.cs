@@ -46,6 +46,8 @@ namespace EventScheduleUI
 
         private void btnExecute_Click(object sender, EventArgs e)
         {
+            //data grid table is hidden until selection made
+            this.dgvListView.Visible = true;
             if (!chkEventName.Checked)
             {
                 this.dgvListView.Columns["EventNameForm2"].Visible = false;
@@ -150,6 +152,11 @@ namespace EventScheduleUI
         private void btnOk_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void dgvListView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Hide();
         }
     }
 }
