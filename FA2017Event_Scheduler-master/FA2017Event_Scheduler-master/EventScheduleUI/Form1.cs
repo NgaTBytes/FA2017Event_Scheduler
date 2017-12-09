@@ -27,7 +27,9 @@ namespace EventScheduleUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\C Programming\Class Project\EventScheduler.mdf;Integrated Security=True;Connect Timeout=30;");
+            // user Tamil password Yemen for participant
+            // user Zulu password Czech Republic for admin
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\baaaa\EventScheduler.mdf;Integrated Security=True;Connect Timeout=30;");
             SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Users where Username ='" + txtUsername.Text + "' and Password ='" + txtPassword.Text + "'", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -48,6 +50,6 @@ namespace EventScheduleUI
         private void btnExit_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
-        }//
+        }
     }
 }
