@@ -42,3 +42,5 @@ C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler12\FA2017Event_Scheduler-master\
 C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler12\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.csproj.GenerateResource.Cache
 C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler12\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\bin\Debug\EventScheduleUI.exe
 C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler12\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\bin\Debug\EventScheduleUI.pdb
+C:\Users\programmer\Source\Repos\NewRepo2\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\bin\Debug\Event_2017FA-CSOS-1320-001.dll
+C:\Users\programmer\Source\Repos\NewRepo2\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\bin\Debug\Event_2017FA-CSOS-1320-001.pdb

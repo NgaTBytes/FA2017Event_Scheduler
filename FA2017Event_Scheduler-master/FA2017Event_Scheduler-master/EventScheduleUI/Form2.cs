@@ -49,8 +49,19 @@ namespace EventScheduleUI
 
             //data grid table is hidden until selection made
             this.dgvListView.Visible = true;
-            
-                if (!chkEventName.Checked)
+
+            this.dgvListView.Columns["EventNameForm2"].Visible = true;
+            this.dgvListView.Columns["LocationForm2"].Visible = true;
+            this.dgvListView.Columns["StartDateForm2"].Visible = true;
+            this.dgvListView.Columns["EndDateForm2"].Visible = true;
+            this.dgvListView.Columns["StartTimeForm2"].Visible = true;
+            this.dgvListView.Columns["EndTimeForm2"].Visible = true;
+            this.dgvListView.Columns["StatusForm2"].Visible = true;
+            this.dgvListView.Columns["NotesForm2"].Visible = true;
+            this.dgvListView.Columns["DescriptionForm2"].Visible = true;
+            this.dgvListView.Columns["AttendeesForm2"].Visible = true;
+
+            if (!chkEventName.Checked)
                 {
                     this.dgvListView.Columns["EventNameForm2"].Visible = false;
                 }
