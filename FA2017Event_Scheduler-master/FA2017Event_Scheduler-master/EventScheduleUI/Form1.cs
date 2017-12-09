@@ -47,6 +47,6 @@ namespace EventScheduleUI
         private void btnExit_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
-        }
+        }//
     }
 }
