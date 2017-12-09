@@ -28,7 +28,7 @@ namespace EventScheduleUI
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // user Tamil password Yemen for participant
-            // user Zulu password Czech Republic for admin
+            // user Swati password China for admin
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\baaaa\EventScheduler.mdf;Integrated Security=True;Connect Timeout=30;");
             SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Users where Username ='" + txtUsername.Text + "' and Password ='" + txtPassword.Text + "'", con);
             DataTable dt = new DataTable();
