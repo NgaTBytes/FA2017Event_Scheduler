@@ -178,9 +178,9 @@ namespace EventScheduleUI
 
         private void tabTab_Enter(object sender, EventArgs e)
         {
-            if (admin == true)
+            if (admin == false)
             {
-                MessageBox.Show("success");
+                tabTab.TabPages.Remove(tabListView);
             }
         }
     }
