@@ -53,7 +53,7 @@ namespace EventScheduleUI
 
         private void btnExecute_Click(object sender, EventArgs e)
         {
-            sda2 = new SqlDataAdapter(@"SELECT Events.EventID, Events.EventName, Events.Location, Events.Status, Events.StartDate, Events.EndDate, Events.StartTime, Events.EndTime, Events.AgeRequiremennt, Events.EventNotes, Events.EventDescription
+            sda2 = new SqlDataAdapter(@"SELECT Events.EventID, Events.EventName, Events.Location, Events.Status, Events.StartDate, Events.EndDate, Events.StartTime, Events.EndTime, Events.AgeRequirement, Events.EventNotes, Events.EventDescription
             FROM Events", connection);
             dt = new DataTable();
             sda2.Fill(dt);
@@ -61,124 +61,83 @@ namespace EventScheduleUI
             //data grid table is hidden until selection made
             this.dgvListView.Visible = true;
 
-            //this.dgvListView.Columns["EventNameForm2"].Visible = true;
-            //this.dgvListView.Columns["LocationForm2"].Visible = true;
-            //this.dgvListView.Columns["StartDateForm2"].Visible = true;
-            //this.dgvListView.Columns["EndDateForm2"].Visible = true;
-            //this.dgvListView.Columns["StartTimeForm2"].Visible = true;
-            //this.dgvListView.Columns["EndTimeForm2"].Visible = true;
-            //this.dgvListView.Columns["AgeRequirement"].Visible = true;
-            //this.dgvListView.Columns["StatusForm2"].Visible = true;
-            //this.dgvListView.Columns["NotesForm2"].Visible = true;
-            //this.dgvListView.Columns["DescriptionForm2"].Visible = true;
+            //this.dgvListView.Columns["eventNameDataGridViewTextBoxColumn"].Visible = true;
+            //this.dgvListView.Columns["locationDataGridViewTextBoxColumn"].Visible = true;
+            //this.dgvListView.Columns["startDateDataGridViewTextBoxColumn"].Visible = true;
+            //this.dgvListView.Columns["endDateDataGridViewTextBoxColumn"].Visible = true;
+            //this.dgvListView.Columns["startTimeDataGridViewTextBoxColumn"].Visible = true;
+            //this.dgvListView.Columns["endTimeDataGridViewTextBoxColumn"].Visible = true;
+            //this.dgvListView.Columns["ageRequirementDataGridViewTextBoxColumn"].Visible = true;
+            //this.dgvListView.Columns["status1DataGridViewTextBoxColumn"].Visible = true;
+            //this.dgvListView.Columns["eventNotesDataGridViewTextBoxColumn"].Visible = true;
+            //this.dgvListView.Columns["eventDescriptionDataGridViewTextBoxColumn"].Visible = true;
             //this.dgvListView.Columns["AttendeesForm2"].Visible = true;
+            for(int i = 0; i < this.dgvListView.Columns.Count; i++)
+            {
+                this.dgvListView.Columns[i].Visible = true;
+            }
+            int counter = 0;
+            foreach (Control control in tabListView.Controls)
+            {
+                if (control is CheckBox)
+                {
+                    CheckBox temp = control as CheckBox;
+                    if (temp.Checked)
+                    {
+                        counter++;
+                    }
+                }
+            }
+            if(counter == 0)
+            {
+                this.dgvListView.Columns[0].Visible = false;
+            }
+            //tabListView.Controls.Find("")
 
-            //if (!chkEventName.Checked)
+            if (!chkEventName.Checked)
+            {
+                this.dgvListView.Columns[1].Visible = false;
+            }
+            if (!chkLocation.Checked)
+            {
+                this.dgvListView.Columns[2].Visible = false;
+            }
+            if (!chkStartDate.Checked)
+            {
+                this.dgvListView.Columns[3].Visible = false;
+            }
+            if (!chkEndDate.Checked)
+            {
+                this.dgvListView.Columns[4].Visible = false;
+            }
+            if (!chkStartTime.Checked)
+            {
+                this.dgvListView.Columns[5].Visible = false;
+            }
+            if (!chkEndTime.Checked)
+            {
+                this.dgvListView.Columns[6].Visible = false;
+            }
+            if (!chkAge.Checked)
+            {
+                this.dgvListView.Columns[7].Visible = false;
+            }
+            if (!chkStatus.Checked)
+            {
+                this.dgvListView.Columns[8].Visible = false;
+            }
+            if (!chkNotes.Checked)
+            {
+                this.dgvListView.Columns[9].Visible = false;
+            }
+            if (!chkDescription.Checked)
+            {
+                this.dgvListView.Columns[10].Visible = false;
+            }
+            //if (!chkRegisteredMaxAttendees.Checked)
             //{
-            //    this.dgvListView.Columns["EventNameForm2"].Visible = false;
+            //    this.dgvListView.Columns[11].Visible = false;
             //}
-            //if (!chkLocation.Checked)
-                //    {
-                //        this.dgvListView.Columns["LocationForm2"].Visible = false;
-                //    }
-                //    if (!chkStartDate.Checked)
-                //    {
-                //        this.dgvListView.Columns["StartDateForm2"].Visible = false;
-                //    }
-                //    if (!chkEndDate.Checked)
-                //    {
-                //        this.dgvListView.Columns["EndDateForm2"].Visible = false;
-                //    }
-                //    if (!chkStartTime.Checked)
-                //    {
-                //        this.dgvListView.Columns["StartTimeForm2"].Visible = false;
-                //    }
-                //    if (!chkEndTime.Checked)
-                //    {
-                //        this.dgvListView.Columns["EndTimeForm2"].Visible = false;
-                //    }
-                //    if (!chkAge.Checked)
-                //    {
-                //        this.dgvListView.Columns["AgeRequirement"].Visible = false;
-                //    }
-                //if (!chkStatus.Checked)
-                //{
-                //    this.dgvListView.Columns["StatusForm2"].Visible = false;
-                //}
-            //    if (!chkNotes.Checked)
-            //    {
-            //        this.dgvListView.Columns["NotesForm2"].Visible = false;
-            //    }
-            //    if (!chkDescription.Checked)
-            //    {
-            //        this.dgvListView.Columns["DescriptionForm2"].Visible = false;
-            //    }
-            //    if (!chkRegisteredMaxAttendees.Checked)
-            //    {
-            //        this.dgvListView.Columns["AttendeesForm2"].Visible = false;
-            //    }
-
-
-
-
-
-
-
-            //DataTable viewSelection = new DataTable();
-            //int[] whatsClicked = new int[10];
-
-            //for (int i = 0; i < isChecked.Length; i++)
-            //{
-            //    isChecked[i] = false;
-            //}
-
-
-            //if (chkEventName.Checked)
-            //{
-            //    isChecked[0] = true;
-            //}
-            //if (chkLocation.Checked)
-            //{
-            //    isChecked[1] = true;
-            //}
-            //if (chkStartDate.Checked)
-            //{
-            //    isChecked[2] = true;
-            //}
-            //if (chkEndDate.Checked)
-            //{
-            //    isChecked[3] = true;
-            //}
-            //if (chkStartTime.Checked)
-            //{
-            //    isChecked[4] = true;
-            //}
-            //if (chkEndTime.Checked)
-            //{
-            //    isChecked[5] = true;
-            //}
-            //if (chkStatus.Checked)
-            //{
-            //    isChecked[6] = true;
-            //}
-            //if (chkNotes.Checked)
-            //{
-            //isChecked[7] = true;
-            //}
-            //if (chkDescription.Checked)
-            //{
-            //    isChecked[8] = true;
-            //}
-            //if (chkRegisteredMaxAttendees.Checked)
-            //{
-            //    isChecked[9] = true;
-            //}
-            //ListView listview = new ListView();
-            //listview.ShowDialog();
-
-           
-
-
         }
 
         private void btnOk_Click(object sender, EventArgs e)
