@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Data.SqlClient;
+using System.Data.Sql;
 //using Event_2017FA_CSOS_1320_001;
 
 namespace EventScheduleUI
@@ -30,8 +31,15 @@ namespace EventScheduleUI
             // user Tamil password Yemen for participant
             // user Swati password China for admin
             // NoT CaSe SeNsItIvE
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\baaaa\EventScheduler.mdf;Integrated Security=True;Connect Timeout=30;");
-            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Users where Username ='" + txtUsername.Text + "' and Password ='" + txtPassword.Text + "'", con);
+            SqlConnection connection = new SqlConnection(@"Data Source=cis1.actx.edu;Initial Catalog=Project1;User ID=db1;Password=db10");
+            //connection.ConnectionString = "Server=cis1.actx.edu;Database=Project1;User Id=db1;Password=db10;";
+            //connection.Open();
+            //MessageBox.Show(connection.ServerVersion);
+            //SqlCommand getLogin = connection.CreateCommand();
+            //getLogin.CommandText = "SELECT * FROM Users WHERE Username='" + txtUsername.Text + "' AND Password='" + txtPassword.Text + "';";
+            //getLogin.CommandText
+
+            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Users where Username ='" + txtUsername.Text + "' and Passsword ='" + txtPassword.Text + "'", connection);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")
