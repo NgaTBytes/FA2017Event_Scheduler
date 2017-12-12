@@ -13,8 +13,8 @@ namespace EventScheduleUI
 {
     public partial class Tabs : Form
     {
-
-        public bool[] isChecked = new bool[10];
+        public bool admin { get; set; }
+       
         public Tabs()
         {
             InitializeComponent();
@@ -172,6 +172,16 @@ namespace EventScheduleUI
         private void dgvListView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             this.Hide();
+        }
+
+        
+
+        private void tabTab_Enter(object sender, EventArgs e)
+        {
+            if (admin == true)
+            {
+                MessageBox.Show("success");
+            }
         }
     }
 }

@@ -44,11 +44,20 @@ namespace EventScheduleUI
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")
             {
+                
                 this.Hide();
                 Tabs f2 = new Tabs();
-                ListView f4 = new ListView();
+                SqlDataAdapter sda2 = new SqlDataAdapter("Select Count(*) From Users where Username ='" + txtUsername.Text + "' and Passsword ='" + txtPassword.Text + "' and RoleID = 2", connection);
+                DataTable dt2 = new DataTable();
+                sda2.Fill(dt2);
+                if (dt2.Rows[0][0].ToString() == "1")
+                {
+                    f2.admin = true;
+                 
+                }
                 f2.ShowDialog();
                 Environment.Exit(0);
+                
             }
             else
             {
