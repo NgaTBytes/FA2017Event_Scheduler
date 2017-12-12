@@ -28,19 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabTab = new System.Windows.Forms.TabControl();
             this.tabFull = new System.Windows.Forms.TabPage();
             this.dgvFullView = new System.Windows.Forms.DataGridView();
-            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Attendees = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabTeaser = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TeaserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +64,30 @@
             this.DescriptionForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AttendeesForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chkAge = new System.Windows.Forms.CheckBox();
+            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageRequirement2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Attendees = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.project1DataSet = new EventScheduleUI.Project1DataSet();
+            this.eventsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eventsTableAdapter = new EventScheduleUI.Project1DataSetTableAdapters.EventsTableAdapter();
+            this.project1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eventNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eventDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eventNotesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageRequiremenntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabTab.SuspendLayout();
             this.tabFull.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFullView)).BeginInit();
@@ -80,6 +95,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabListView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.project1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.project1DataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabTab
@@ -116,68 +134,14 @@
             this.EndDate,
             this.StartTime,
             this.EndTime,
+            this.ageRequirement2,
             this.Attendees,
             this.Notes,
             this.Description});
-            this.dgvFullView.Location = new System.Drawing.Point(0, 0);
+            this.dgvFullView.Location = new System.Drawing.Point(6, 3);
             this.dgvFullView.Name = "dgvFullView";
-            this.dgvFullView.Size = new System.Drawing.Size(1432, 516);
+            this.dgvFullView.Size = new System.Drawing.Size(1226, 516);
             this.dgvFullView.TabIndex = 1;
-            // 
-            // EventName
-            // 
-            this.EventName.HeaderText = "Event Name";
-            this.EventName.Name = "EventName";
-            this.EventName.Width = 200;
-            // 
-            // Location
-            // 
-            this.Location.HeaderText = "Location";
-            this.Location.Name = "Location";
-            this.Location.Width = 150;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            // 
-            // StartDate
-            // 
-            this.StartDate.HeaderText = "Start Date";
-            this.StartDate.Name = "StartDate";
-            this.StartDate.Width = 75;
-            // 
-            // EndDate
-            // 
-            this.EndDate.HeaderText = "End Date";
-            this.EndDate.Name = "EndDate";
-            this.EndDate.Width = 75;
-            // 
-            // StartTime
-            // 
-            this.StartTime.HeaderText = "Start Time";
-            this.StartTime.Name = "StartTime";
-            // 
-            // EndTime
-            // 
-            this.EndTime.HeaderText = "End Time";
-            this.EndTime.Name = "EndTime";
-            // 
-            // Attendees
-            // 
-            this.Attendees.HeaderText = "Registered/Max  Attendees";
-            this.Attendees.Name = "Attendees";
-            // 
-            // Notes
-            // 
-            this.Notes.HeaderText = "Notes";
-            this.Notes.Name = "Notes";
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.Width = 400;
             // 
             // tabTeaser
             // 
@@ -254,6 +218,7 @@
             // 
             // dgvListView
             // 
+            this.dgvListView.AutoGenerateColumns = false;
             this.dgvListView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EventNameForm2,
@@ -266,12 +231,22 @@
             this.StatusForm2,
             this.NotesForm2,
             this.DescriptionForm2,
-            this.AttendeesForm2});
-            this.dgvListView.Location = new System.Drawing.Point(5, 68);
+            this.AttendeesForm2,
+            this.eventNameDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.eventDescriptionDataGridViewTextBoxColumn,
+            this.startDateDataGridViewTextBoxColumn,
+            this.endDateDataGridViewTextBoxColumn,
+            this.startTimeDataGridViewTextBoxColumn,
+            this.endTimeDataGridViewTextBoxColumn,
+            this.eventNotesDataGridViewTextBoxColumn,
+            this.ageRequiremenntDataGridViewTextBoxColumn});
+            this.dgvListView.DataSource = this.eventsBindingSource;
+            this.dgvListView.Location = new System.Drawing.Point(-966, 135);
             this.dgvListView.Margin = new System.Windows.Forms.Padding(2);
             this.dgvListView.Name = "dgvListView";
             this.dgvListView.RowTemplate.Height = 28;
-            this.dgvListView.Size = new System.Drawing.Size(1188, 251);
+            this.dgvListView.Size = new System.Drawing.Size(2106, 251);
             this.dgvListView.TabIndex = 12;
             this.dgvListView.Visible = false;
             this.dgvListView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListView_CellContentClick);
@@ -478,6 +453,139 @@
             this.chkAge.Text = "Age Requirement";
             this.chkAge.UseVisualStyleBackColor = true;
             // 
+            // EventName
+            // 
+            this.EventName.HeaderText = "Event Name";
+            this.EventName.Name = "EventName";
+            this.EventName.Width = 200;
+            // 
+            // Location
+            // 
+            this.Location.HeaderText = "Location";
+            this.Location.Name = "Location";
+            this.Location.Width = 150;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            // 
+            // StartDate
+            // 
+            this.StartDate.HeaderText = "Start Date";
+            this.StartDate.Name = "StartDate";
+            this.StartDate.Width = 75;
+            // 
+            // EndDate
+            // 
+            this.EndDate.HeaderText = "End Date";
+            this.EndDate.Name = "EndDate";
+            this.EndDate.Width = 75;
+            // 
+            // StartTime
+            // 
+            this.StartTime.HeaderText = "Start Time";
+            this.StartTime.Name = "StartTime";
+            // 
+            // EndTime
+            // 
+            this.EndTime.HeaderText = "End Time";
+            this.EndTime.Name = "EndTime";
+            // 
+            // ageRequirement2
+            // 
+            this.ageRequirement2.HeaderText = "Age Requirement";
+            this.ageRequirement2.Name = "ageRequirement2";
+            // 
+            // Attendees
+            // 
+            this.Attendees.HeaderText = "Registered/Max  Attendees";
+            this.Attendees.Name = "Attendees";
+            // 
+            // Notes
+            // 
+            this.Notes.HeaderText = "Notes";
+            this.Notes.Name = "Notes";
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.Width = 400;
+            // 
+            // project1DataSet
+            // 
+            this.project1DataSet.DataSetName = "Project1DataSet";
+            this.project1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // eventsBindingSource
+            // 
+            this.eventsBindingSource.DataMember = "Events";
+            this.eventsBindingSource.DataSource = this.project1DataSet;
+            // 
+            // eventsTableAdapter
+            // 
+            this.eventsTableAdapter.ClearBeforeFill = true;
+            // 
+            // project1DataSetBindingSource
+            // 
+            this.project1DataSetBindingSource.DataSource = this.project1DataSet;
+            this.project1DataSetBindingSource.Position = 0;
+            // 
+            // eventNameDataGridViewTextBoxColumn
+            // 
+            this.eventNameDataGridViewTextBoxColumn.DataPropertyName = "EventName";
+            this.eventNameDataGridViewTextBoxColumn.HeaderText = "EventName";
+            this.eventNameDataGridViewTextBoxColumn.Name = "eventNameDataGridViewTextBoxColumn";
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            // 
+            // eventDescriptionDataGridViewTextBoxColumn
+            // 
+            this.eventDescriptionDataGridViewTextBoxColumn.DataPropertyName = "EventDescription";
+            this.eventDescriptionDataGridViewTextBoxColumn.HeaderText = "EventDescription";
+            this.eventDescriptionDataGridViewTextBoxColumn.Name = "eventDescriptionDataGridViewTextBoxColumn";
+            // 
+            // startDateDataGridViewTextBoxColumn
+            // 
+            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
+            this.startDateDataGridViewTextBoxColumn.HeaderText = "StartDate";
+            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
+            // 
+            // endDateDataGridViewTextBoxColumn
+            // 
+            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
+            this.endDateDataGridViewTextBoxColumn.HeaderText = "EndDate";
+            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            // 
+            // startTimeDataGridViewTextBoxColumn
+            // 
+            this.startTimeDataGridViewTextBoxColumn.DataPropertyName = "StartTime";
+            this.startTimeDataGridViewTextBoxColumn.HeaderText = "StartTime";
+            this.startTimeDataGridViewTextBoxColumn.Name = "startTimeDataGridViewTextBoxColumn";
+            // 
+            // endTimeDataGridViewTextBoxColumn
+            // 
+            this.endTimeDataGridViewTextBoxColumn.DataPropertyName = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn.HeaderText = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn.Name = "endTimeDataGridViewTextBoxColumn";
+            // 
+            // eventNotesDataGridViewTextBoxColumn
+            // 
+            this.eventNotesDataGridViewTextBoxColumn.DataPropertyName = "EventNotes";
+            this.eventNotesDataGridViewTextBoxColumn.HeaderText = "EventNotes";
+            this.eventNotesDataGridViewTextBoxColumn.Name = "eventNotesDataGridViewTextBoxColumn";
+            // 
+            // ageRequiremenntDataGridViewTextBoxColumn
+            // 
+            this.ageRequiremenntDataGridViewTextBoxColumn.DataPropertyName = "AgeRequiremennt";
+            this.ageRequiremenntDataGridViewTextBoxColumn.HeaderText = "AgeRequiremennt";
+            this.ageRequiremenntDataGridViewTextBoxColumn.Name = "ageRequiremenntDataGridViewTextBoxColumn";
+            // 
             // Tabs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,6 +594,7 @@
             this.Controls.Add(this.tabTab);
             this.Name = "Tabs";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Tabs_Load);
             this.tabTab.ResumeLayout(false);
             this.tabFull.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFullView)).EndInit();
@@ -494,6 +603,9 @@
             this.tabListView.ResumeLayout(false);
             this.tabListView.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.project1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.project1DataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -522,16 +634,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TeaserLocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn TeaserDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn TeaserCategory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EventName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Location;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EndTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Attendees;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Notes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridView dgvListView;
         private System.Windows.Forms.CheckBox chkAge;
         private System.Windows.Forms.DataGridViewTextBoxColumn EventNameForm2;
@@ -545,5 +647,29 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NotesForm2;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionForm2;
         private System.Windows.Forms.DataGridViewTextBoxColumn AttendeesForm2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Location;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ageRequirement2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Attendees;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Notes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private Project1DataSet project1DataSet;
+        private System.Windows.Forms.BindingSource eventsBindingSource;
+        private Project1DataSetTableAdapters.EventsTableAdapter eventsTableAdapter;
+        private System.Windows.Forms.BindingSource project1DataSetBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eventNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eventDescriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eventNotesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ageRequiremenntDataGridViewTextBoxColumn;
     }
 }
