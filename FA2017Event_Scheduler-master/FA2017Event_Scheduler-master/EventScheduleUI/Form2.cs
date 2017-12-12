@@ -56,12 +56,13 @@ namespace EventScheduleUI
             this.dgvListView.Columns["EndDateForm2"].Visible = true;
             this.dgvListView.Columns["StartTimeForm2"].Visible = true;
             this.dgvListView.Columns["EndTimeForm2"].Visible = true;
+            this.dgvListView.Columns["AgeRequirement"].Visible = true;
             this.dgvListView.Columns["StatusForm2"].Visible = true;
             this.dgvListView.Columns["NotesForm2"].Visible = true;
             this.dgvListView.Columns["DescriptionForm2"].Visible = true;
             this.dgvListView.Columns["AttendeesForm2"].Visible = true;
 
-            if (!chkEventName.Checked)
+                if (!chkEventName.Checked)
                 {
                     this.dgvListView.Columns["EventNameForm2"].Visible = false;
                 }
@@ -84,6 +85,10 @@ namespace EventScheduleUI
                 if (!chkEndTime.Checked)
                 {
                     this.dgvListView.Columns["EndTimeForm2"].Visible = false;
+                }
+                if (!chkAge.Checked)
+                {
+                    this.dgvListView.Columns["AgeRequirement"].Visible = false;
                 }
                 if (!chkStatus.Checked)
                 {
