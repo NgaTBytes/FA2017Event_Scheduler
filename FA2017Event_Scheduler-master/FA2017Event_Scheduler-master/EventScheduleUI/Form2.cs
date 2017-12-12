@@ -53,12 +53,8 @@ namespace EventScheduleUI
 
         private void btnExecute_Click(object sender, EventArgs e)
         {
-            sda2 = new SqlDataAdapter(@"SELECT Events.EventID, Events.EventName, Locations.LocationID, Locations.LocationName, Events.Status, Events.StartDate, Events.EndDate, Events.StartTime, Events.EndTime, Events.AgeRequiremennt, Events.EventNotes, Events.EventDescription
-            FROM (Events
-            INNER JOIN Event_Locations
-            ON Events.EventID = Event_Locations.EventID)
-            INNER JOIN Locations
-            ON Locations.LocationID = Event_Locations.LocationID", connection);
+            sda2 = new SqlDataAdapter(@"SELECT Events.EventID, Events.EventName, Events.Location, Events.Status, Events.StartDate, Events.EndDate, Events.StartTime, Events.EndTime, Events.AgeRequiremennt, Events.EventNotes, Events.EventDescription
+            FROM Events", connection);
             dt = new DataTable();
             sda2.Fill(dt);
             dgvListView.DataSource = dt;
