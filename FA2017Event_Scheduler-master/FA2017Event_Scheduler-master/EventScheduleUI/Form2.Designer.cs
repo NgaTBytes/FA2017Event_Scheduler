@@ -52,17 +52,6 @@
             this.chkStartTime = new System.Windows.Forms.CheckBox();
             this.chkRegisteredMaxAttendees = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.EventNameForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LocationForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDateForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndDateForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartTimeForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndTimeForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AgeRequirement = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StatusForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NotesForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescriptionForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AttendeesForm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chkAge = new System.Windows.Forms.CheckBox();
             this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,15 +68,7 @@
             this.eventsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eventsTableAdapter = new EventScheduleUI.Project1DataSetTableAdapters.EventsTableAdapter();
             this.project1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.eventNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventNotesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageRequiremenntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.tabTab.SuspendLayout();
             this.tabFull.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFullView)).BeginInit();
@@ -138,7 +119,7 @@
             this.Attendees,
             this.Notes,
             this.Description});
-            this.dgvFullView.Location = new System.Drawing.Point(6, 3);
+            this.dgvFullView.Location = new System.Drawing.Point(0, 0);
             this.dgvFullView.Name = "dgvFullView";
             this.dgvFullView.Size = new System.Drawing.Size(1226, 516);
             this.dgvFullView.TabIndex = 1;
@@ -193,6 +174,7 @@
             // 
             // tabListView
             // 
+            this.tabListView.Controls.Add(this.btnDelete);
             this.tabListView.Controls.Add(this.chkAge);
             this.tabListView.Controls.Add(this.dgvListView);
             this.tabListView.Controls.Add(this.btnExecute);
@@ -218,43 +200,21 @@
             // 
             // dgvListView
             // 
-            this.dgvListView.AutoGenerateColumns = false;
+            this.dgvListView.AllowUserToOrderColumns = true;
             this.dgvListView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EventNameForm2,
-            this.LocationForm2,
-            this.StartDateForm2,
-            this.EndDateForm2,
-            this.StartTimeForm2,
-            this.EndTimeForm2,
-            this.AgeRequirement,
-            this.StatusForm2,
-            this.NotesForm2,
-            this.DescriptionForm2,
-            this.AttendeesForm2,
-            this.eventNameDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.eventDescriptionDataGridViewTextBoxColumn,
-            this.startDateDataGridViewTextBoxColumn,
-            this.endDateDataGridViewTextBoxColumn,
-            this.startTimeDataGridViewTextBoxColumn,
-            this.endTimeDataGridViewTextBoxColumn,
-            this.eventNotesDataGridViewTextBoxColumn,
-            this.ageRequiremenntDataGridViewTextBoxColumn});
-            this.dgvListView.DataSource = this.eventsBindingSource;
-            this.dgvListView.Location = new System.Drawing.Point(-966, 135);
+            this.dgvListView.Location = new System.Drawing.Point(29, 69);
             this.dgvListView.Margin = new System.Windows.Forms.Padding(2);
             this.dgvListView.Name = "dgvListView";
             this.dgvListView.RowTemplate.Height = 28;
-            this.dgvListView.Size = new System.Drawing.Size(2106, 251);
+            this.dgvListView.Size = new System.Drawing.Size(1125, 251);
             this.dgvListView.TabIndex = 12;
             this.dgvListView.Visible = false;
-            this.dgvListView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListView_CellContentClick);
+            this.dgvListView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvListView_RowsRemoved);
             // 
             // btnExecute
             // 
             this.btnExecute.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.btnExecute.Location = new System.Drawing.Point(273, 361);
+            this.btnExecute.Location = new System.Drawing.Point(29, 368);
             this.btnExecute.Name = "btnExecute";
             this.btnExecute.Size = new System.Drawing.Size(339, 63);
             this.btnExecute.TabIndex = 11;
@@ -383,65 +343,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "What do you want to see?";
             // 
-            // EventNameForm2
-            // 
-            this.EventNameForm2.HeaderText = "Event Name";
-            this.EventNameForm2.Name = "EventNameForm2";
-            // 
-            // LocationForm2
-            // 
-            this.LocationForm2.HeaderText = "Location";
-            this.LocationForm2.Name = "LocationForm2";
-            // 
-            // StartDateForm2
-            // 
-            this.StartDateForm2.HeaderText = "Start Date";
-            this.StartDateForm2.Name = "StartDateForm2";
-            // 
-            // EndDateForm2
-            // 
-            this.EndDateForm2.HeaderText = "End Date";
-            this.EndDateForm2.Name = "EndDateForm2";
-            // 
-            // StartTimeForm2
-            // 
-            this.StartTimeForm2.HeaderText = "Start Time";
-            this.StartTimeForm2.Name = "StartTimeForm2";
-            // 
-            // EndTimeForm2
-            // 
-            this.EndTimeForm2.HeaderText = "End Time";
-            this.EndTimeForm2.Name = "EndTimeForm2";
-            // 
-            // AgeRequirement
-            // 
-            this.AgeRequirement.HeaderText = "Age Requirement";
-            this.AgeRequirement.Name = "AgeRequirement";
-            // 
-            // StatusForm2
-            // 
-            this.StatusForm2.HeaderText = "Status";
-            this.StatusForm2.Name = "StatusForm2";
-            // 
-            // NotesForm2
-            // 
-            this.NotesForm2.HeaderText = "Notes";
-            this.NotesForm2.Name = "NotesForm2";
-            // 
-            // DescriptionForm2
-            // 
-            this.DescriptionForm2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DescriptionForm2.HeaderText = "Description";
-            this.DescriptionForm2.Name = "DescriptionForm2";
-            this.DescriptionForm2.Width = 85;
-            // 
-            // AttendeesForm2
-            // 
-            this.AttendeesForm2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.AttendeesForm2.HeaderText = "Registered/Max Attendees";
-            this.AttendeesForm2.Name = "AttendeesForm2";
-            this.AttendeesForm2.Width = 145;
-            // 
             // chkAge
             // 
             this.chkAge.AutoSize = true;
@@ -532,59 +433,15 @@
             this.project1DataSetBindingSource.DataSource = this.project1DataSet;
             this.project1DataSetBindingSource.Position = 0;
             // 
-            // eventNameDataGridViewTextBoxColumn
+            // btnDelete
             // 
-            this.eventNameDataGridViewTextBoxColumn.DataPropertyName = "EventName";
-            this.eventNameDataGridViewTextBoxColumn.HeaderText = "EventName";
-            this.eventNameDataGridViewTextBoxColumn.Name = "eventNameDataGridViewTextBoxColumn";
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            // 
-            // eventDescriptionDataGridViewTextBoxColumn
-            // 
-            this.eventDescriptionDataGridViewTextBoxColumn.DataPropertyName = "EventDescription";
-            this.eventDescriptionDataGridViewTextBoxColumn.HeaderText = "EventDescription";
-            this.eventDescriptionDataGridViewTextBoxColumn.Name = "eventDescriptionDataGridViewTextBoxColumn";
-            // 
-            // startDateDataGridViewTextBoxColumn
-            // 
-            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.HeaderText = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-            // 
-            // endDateDataGridViewTextBoxColumn
-            // 
-            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.HeaderText = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-            // 
-            // startTimeDataGridViewTextBoxColumn
-            // 
-            this.startTimeDataGridViewTextBoxColumn.DataPropertyName = "StartTime";
-            this.startTimeDataGridViewTextBoxColumn.HeaderText = "StartTime";
-            this.startTimeDataGridViewTextBoxColumn.Name = "startTimeDataGridViewTextBoxColumn";
-            // 
-            // endTimeDataGridViewTextBoxColumn
-            // 
-            this.endTimeDataGridViewTextBoxColumn.DataPropertyName = "EndTime";
-            this.endTimeDataGridViewTextBoxColumn.HeaderText = "EndTime";
-            this.endTimeDataGridViewTextBoxColumn.Name = "endTimeDataGridViewTextBoxColumn";
-            // 
-            // eventNotesDataGridViewTextBoxColumn
-            // 
-            this.eventNotesDataGridViewTextBoxColumn.DataPropertyName = "EventNotes";
-            this.eventNotesDataGridViewTextBoxColumn.HeaderText = "EventNotes";
-            this.eventNotesDataGridViewTextBoxColumn.Name = "eventNotesDataGridViewTextBoxColumn";
-            // 
-            // ageRequiremenntDataGridViewTextBoxColumn
-            // 
-            this.ageRequiremenntDataGridViewTextBoxColumn.DataPropertyName = "AgeRequiremennt";
-            this.ageRequiremenntDataGridViewTextBoxColumn.HeaderText = "AgeRequiremennt";
-            this.ageRequiremenntDataGridViewTextBoxColumn.Name = "ageRequiremenntDataGridViewTextBoxColumn";
+            this.btnDelete.Location = new System.Drawing.Point(441, 368);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(190, 63);
+            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // Tabs
             // 
@@ -636,17 +493,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TeaserCategory;
         private System.Windows.Forms.DataGridView dgvListView;
         private System.Windows.Forms.CheckBox chkAge;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EventNameForm2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LocationForm2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartDateForm2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EndDateForm2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartTimeForm2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EndTimeForm2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AgeRequirement;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StatusForm2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NotesForm2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionForm2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AttendeesForm2;
         private System.Windows.Forms.DataGridViewTextBoxColumn EventName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Location;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
@@ -662,14 +508,6 @@
         private System.Windows.Forms.BindingSource eventsBindingSource;
         private Project1DataSetTableAdapters.EventsTableAdapter eventsTableAdapter;
         private System.Windows.Forms.BindingSource project1DataSetBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventDescriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventNotesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ageRequiremenntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
