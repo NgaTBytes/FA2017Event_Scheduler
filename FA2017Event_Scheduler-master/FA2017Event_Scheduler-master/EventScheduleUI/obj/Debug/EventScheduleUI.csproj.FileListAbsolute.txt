@@ -90,3 +90,14 @@ C:\Users\programmer\Source\Repos\NewRepo3\FA2017Event_Scheduler-master\FA2017Eve
 C:\Users\programmer\Source\Repos\NewRepo3\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.csproj.GenerateResource.Cache
 C:\Users\programmer\Source\Repos\NewRepo3\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\bin\Debug\Event_2017FA-CSOS-1320-001.dll
 C:\Users\programmer\Source\Repos\NewRepo3\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\bin\Debug\Event_2017FA-CSOS-1320-001.pdb
+C:\Users\Piercer_of_Shadows\Source\Repos\NewRepo\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\bin\Debug\EventScheduleUI.exe.config
+C:\Users\Piercer_of_Shadows\Source\Repos\NewRepo\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.exe
+C:\Users\Piercer_of_Shadows\Source\Repos\NewRepo\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.pdb
+C:\Users\Piercer_of_Shadows\Source\Repos\NewRepo\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\bin\Debug\EventScheduleUI.exe
+C:\Users\Piercer_of_Shadows\Source\Repos\NewRepo\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\bin\Debug\EventScheduleUI.pdb
+C:\Users\Piercer_of_Shadows\Source\Repos\NewRepo\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.csprojResolveAssemblyReference.cache
+C:\Users\Piercer_of_Shadows\Source\Repos\NewRepo\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.Login.resources
+C:\Users\Piercer_of_Shadows\Source\Repos\NewRepo\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.Tabs.resources
+C:\Users\Piercer_of_Shadows\Source\Repos\NewRepo\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.ListView.resources
+C:\Users\Piercer_of_Shadows\Source\Repos\NewRepo\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.Properties.Resources.resources
+C:\Users\Piercer_of_Shadows\Source\Repos\NewRepo\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.csproj.GenerateResource.Cache

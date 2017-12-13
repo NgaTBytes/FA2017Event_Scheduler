@@ -24,7 +24,11 @@ namespace EventScheduleUI
         public Tabs()
         {
             InitializeComponent();
-            //tabTab.TabPages.Remove(tabListView);
+            if(admin == false)
+            {
+                tabTab.TabPages.Remove(tabListView);
+            }
+                
             SqlConnection connection = new SqlConnection(@"Data Source=cis1.actx.edu;Initial Catalog=Project1;User ID=db1;Password=db10");
             connection.Open();
             
@@ -80,7 +84,7 @@ namespace EventScheduleUI
 
         private void btnExecute_Click(object sender, EventArgs e)
         {
-            sda2 = new SqlDataAdapter(@"SELECT Events.EventID, Events.EventName, Events.Location, Events.Status, Events.StartDate, Events.EndDate, Events.StartTime, Events.EndTime, Events.AgeRequirement, Events.EventNotes, Events.EventDescription, Events.MaxAttendees
+            sda2 = new SqlDataAdapter(@"SELECT Events.EventID, Events.EventName, Events.Location, Events.Status, Events.StartDate, Events.EndDate, Events.StartTime, Events.EndTime, Events.AgeRequirement, Events.EventNotes, Events.EventDescription, Events.MaxAttendees, Events.Private, Events.Closed
             FROM Events", connection);
             dt = new DataTable();
             sda2.Fill(dt);
@@ -127,6 +131,10 @@ namespace EventScheduleUI
             this.dgvListView.Columns[9].Width = 100;
             this.dgvListView.Columns[10].Width = 250;
             this.dgvListView.Columns[9].Width = 100;
+            this.dgvListView.Columns[11].Width = 100;
+            this.dgvListView.Columns[12].Width = 100;
+            this.dgvListView.Columns[13].Width = 100;
+
 
             if (counter == 0)
             {
@@ -177,6 +185,14 @@ namespace EventScheduleUI
             if (!chkRegisteredMaxAttendees.Checked)
             {
                 this.dgvListView.Columns[11].Visible = false;
+            }
+            if(!chkRegisteredMaxAttendees.Checked)
+            {
+                this.dgvListView.Columns[12].Visible = false;
+            }
+            if(!chkRegisteredMaxAttendees.Checked)
+            {
+                this.dgvListView.Columns[13].Visible = false;
             }
         }
 

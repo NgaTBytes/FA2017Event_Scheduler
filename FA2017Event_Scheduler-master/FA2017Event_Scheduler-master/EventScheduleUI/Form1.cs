@@ -39,31 +39,29 @@ namespace EventScheduleUI
             //getLogin.CommandText = "SELECT * FROM Users WHERE Username='" + txtUsername.Text + "' AND Password='" + txtPassword.Text + "';";
             //getLogin.CommandText
 
-            /*SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Users where Username ='" + txtUsername.Text + "' and Passsword ='" + txtPassword.Text + "'", connection);
+            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Users where Username ='" + txtUsername.Text + "' and Passsword ='" + txtPassword.Text + "'", connection);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")
             {
-                */
                 this.Hide();
                 Tabs f2 = new Tabs();
-                //SqlDataAdapter sda2 = new SqlDataAdapter("Select Count(*) From Users where Username ='" + txtUsername.Text + "' and Passsword ='" + txtPassword.Text + "' and RoleID = 2", connection);
-                //DataTable dt2 = new DataTable();
-                //sda2.Fill(dt2);
-                //if (dt2.Rows[0][0].ToString() == "1")
-                //{
-                //    f2.admin = true;
-                 
-                //}
-                f2.ShowDialog();
+                SqlDataAdapter sda2 = new SqlDataAdapter("Select Count(*) From Users where Username ='" + txtUsername.Text + "' and Passsword ='" + txtPassword.Text + "' and RoleID = 2", connection);
+                DataTable dt2 = new DataTable();
+                sda2.Fill(dt2);
+                if (dt2.Rows[0][0].ToString() == "1")
+                {
+                    f2.admin = true;
+                }
+            f2.ShowDialog();
                 Environment.Exit(0);
-                
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Please Check your Username and Password");
-            //}
-        }
+
+              }
+            else
+            {
+                MessageBox.Show("Please Check your Username and Password");
+            }
+}
 
         private void btnExit_Click(object sender, EventArgs e)
         {
