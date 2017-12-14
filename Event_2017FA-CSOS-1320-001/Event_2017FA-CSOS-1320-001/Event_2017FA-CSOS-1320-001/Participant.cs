@@ -22,14 +22,50 @@ namespace Event_2017FA_CSOS_1320_001
 
         public override void Register(string userName, int eventID)
         {
-            DateTime today = DateTime.Today;
+            
             connection.Open();
-            using (SqlCommand insertRegistration = connection.CreateCommand())
+            using (SqlCommand getEventCount = connection.CreateCommand())
             {
-                insertRegistration.CommandText = "INSERT INTO Event_Users (EventID, UserName, DateRegistered) VALUES ( " + eventID + ", '" + userName + "', '" + today + "')";
-                insertRegistration.ExecuteNonQuery();
+                //sql statement
+                getEventCount.CommandText = "SELECT COUNT(Event_Users.UserName), Events.MaxAttendees  FROM Project1.dbo.Event_Users INNER JOIN Project1.dbo.Events ON Event_Users.EventID = Events.EventID WHERE Event_Users.EventID = " + eventID;
 
+                //start sql reader
+                using (SqlDataReader reader = getEventCount.ExecuteReader())
+                {
+                    // initialize count variable
+                    int count = 0;
+                    int maxAttendees = 0;
+                   
+                    while (reader.Read())
+                    {
+                        // set count variable to count of users registered
+                        count = reader.GetInt32(0);
+                        maxAttendees = reader.GetInt32(1);
+                    }
+                    if(count < maxAttendees)
+                    {
+                        using (SqlCommand insertRegistration = connection.CreateCommand())
+                        {
+                            DateTime today = DateTime.Today;
+                            insertRegistration.CommandText = "INSERT INTO Event_Users (EventID, UserName, DateRegistered) VALUES ( " + eventID + ", '" + userName + "', '" + today + "')";
+                            insertRegistration.ExecuteNonQuery();
+
+                        }
+                    }
+                    else
+                    {
+                        using (SqlCommand insertWaitlists = connection.CreateCommand())
+                        {
+                            DateTime today = DateTime.Today;
+                            insertWaitlists.CommandText = "INSERT INTO Waitlists (EventID, UserName, WaitlistNumber ) VALUES ( " + eventID + ", '" + userName + "', '" + today + "')";
+                            insertWaitlists.ExecuteNonQuery();
+
+                        }
+                    }
+
+                }
             }
+            
         }
     }
 }
