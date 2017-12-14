@@ -43,7 +43,7 @@ namespace EventScheduleUI
             dgvParticipantView.DataSource = dt1;
             using (SqlCommand getAllEventRecs = connection.CreateCommand())
             {
-                getAllEventRecs.CommandText = "SELECT EventName, Location, Status, StartDate, EndDate, StartTime, EndTime, AgeRequirement, EventDescription, EventNotes, MaxAttendees, EventID FROM Events;";
+                getAllEventRecs.CommandText = "SELECT EventName, Location, Status, StartDate, EndDate, StartTime, EndTime, AgeRequirement, EventDescription, EventNotes, MaxAttendees FROM Events;";
 
                 using (SqlDataReader reader = getAllEventRecs.ExecuteReader())
                 {
@@ -98,7 +98,7 @@ namespace EventScheduleUI
 
         private void btnExecute_Click(object sender, EventArgs e)
         {
-            sda2 = new SqlDataAdapter(@"SELECT Events.EventName, Events.Location, Events.Status, Events.StartDate, Events.EndDate, Events.StartTime, Events.EndTime, Events.AgeRequirement, Events.EventNotes, Events.EventDescription, Events.MaxAttendees, Events.CategoryID, Events.Private, Events.Closed
+            sda2 = new SqlDataAdapter(@"SELECT EventId, Events.EventName, Events.Location, Events.Status, Events.StartDate, Events.EndDate, Events.StartTime, Events.EndTime, Events.AgeRequirement, Events.EventNotes, Events.EventDescription, Events.MaxAttendees, Events.CategoryID, Events.Private, Events.Closed
             FROM Events", connection);
             dt = new DataTable();
             sda2.Fill(dt);
@@ -106,16 +106,7 @@ namespace EventScheduleUI
             //data grid table is hidden until selection made
             this.dgvListView.Visible = true;
 
-            //this.dgvListView.Columns["eventNameDataGridViewTextBoxColumn"].Visible = true;
-            //this.dgvListView.Columns["locationDataGridViewTextBoxColumn"].Visible = true;
-            //this.dgvListView.Columns["startDateDataGridViewTextBoxColumn"].Visible = true;
-            //this.dgvListView.Columns["endDateDataGridViewTextBoxColumn"].Visible = true;
-            //this.dgvListView.Columns["startTimeDataGridViewTextBoxColumn"].Visible = true;
-            //this.dgvListView.Columns["endTimeDataGridViewTextBoxColumn"].Visible = true;
-            //this.dgvListView.Columns["ageRequirementDataGridViewTextBoxColumn"].Visible = true;
-            //this.dgvListView.Columns["status1DataGridViewTextBoxColumn"].Visible = true;
-            //this.dgvListView.Columns["eventNotesDataGridViewTextBoxColumn"].Visible = true;
-            //this.dgvListView.Columns["eventDescriptionDataGridViewTextBoxColumn"].Visible = true;
+           
             //this.dgvListView.Columns["AttendeesForm2"].Visible = true;
             for (int i = 0; i < this.dgvListView.Columns.Count; i++)
             {
@@ -261,8 +252,8 @@ namespace EventScheduleUI
             int eventID = 0;
             if (int.TryParse(txtEventID.Text, out eventID))
             {
-                MessageBox.Show("heloo comrade" + userName + eventID.ToString());
-                //someAdmin.Register(userName, eventID);
+                //MessageBox.Show("heloo comrade" + userName + eventID.ToString());
+                someAdmin.Register(userName, eventID);
             }
             else
             {
