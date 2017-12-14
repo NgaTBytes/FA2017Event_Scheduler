@@ -227,7 +227,7 @@ namespace EventScheduleUI
             dgvListView.CommitEdit(DataGridViewDataErrorContexts.Commit);
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnUpdateList_Click(object sender, EventArgs e)
         {
             SqlCommandBuilder builder;
             builder = new SqlCommandBuilder(sda2);
@@ -254,6 +254,7 @@ namespace EventScheduleUI
             {
                 //MessageBox.Show("heloo comrade" + userName + eventID.ToString());
                 someAdmin.Register(userName, eventID);
+                
             }
             else
             {

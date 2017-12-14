@@ -26,7 +26,7 @@ namespace Event_2017FA_CSOS_1320_001
             connection.Open();
             using (SqlCommand insertRegistration = connection.CreateCommand())
             {
-                insertRegistration.CommandText = "INSERT INTO Event_Users (EventID, UserName, DateRegistered) VALUES ( " + eventID + ", '" + userName + "', " + today + ")";
+                insertRegistration.CommandText = "INSERT INTO Event_Users (EventID, UserName, DateRegistered) VALUES ( " + eventID + ", '" + userName + "', '" + today + "')";
                 insertRegistration.ExecuteNonQuery();
 
             }

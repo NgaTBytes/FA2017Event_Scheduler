@@ -53,7 +53,7 @@
             this.TeaserDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TeaserCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabListView = new System.Windows.Forms.TabPage();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdateList = new System.Windows.Forms.Button();
             this.chkAge = new System.Windows.Forms.CheckBox();
             this.dgvListView = new System.Windows.Forms.DataGridView();
             this.btnExecute = new System.Windows.Forms.Button();
@@ -296,7 +296,7 @@
             // 
             // tabListView
             // 
-            this.tabListView.Controls.Add(this.btnDelete);
+            this.tabListView.Controls.Add(this.btnUpdateList);
             this.tabListView.Controls.Add(this.chkAge);
             this.tabListView.Controls.Add(this.dgvListView);
             this.tabListView.Controls.Add(this.btnExecute);
@@ -319,16 +319,16 @@
             this.tabListView.Text = "List View";
             this.tabListView.UseVisualStyleBackColor = true;
             // 
-            // btnDelete
+            // btnUpdateList
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.btnDelete.Location = new System.Drawing.Point(964, 368);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(190, 63);
-            this.btnDelete.TabIndex = 14;
-            this.btnDelete.Text = "Update";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnUpdateList.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.btnUpdateList.Location = new System.Drawing.Point(964, 368);
+            this.btnUpdateList.Name = "btnUpdateList";
+            this.btnUpdateList.Size = new System.Drawing.Size(190, 63);
+            this.btnUpdateList.TabIndex = 14;
+            this.btnUpdateList.Text = "Update";
+            this.btnUpdateList.UseVisualStyleBackColor = true;
+            this.btnUpdateList.Click += new System.EventHandler(this.btnUpdateList_Click);
             // 
             // chkAge
             // 
@@ -586,7 +586,7 @@
         private System.Windows.Forms.BindingSource eventsBindingSource;
         private Project1DataSetTableAdapters.EventsTableAdapter eventsTableAdapter;
         private System.Windows.Forms.BindingSource project1DataSetBindingSource;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdateList;
         private System.Windows.Forms.DataGridView dgvTeaser;
         private System.Windows.Forms.DataGridViewTextBoxColumn TeaserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn TeaserLocation;
