@@ -110,3 +110,6 @@ C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler13\FA2017Event_Scheduler-master\
 C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler13\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.Tabs.resources
 C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler13\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.Properties.Resources.resources
 C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler13\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.csproj.GenerateResource.Cache
+C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler14\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\bin\Debug\EventScheduleUI.exe.config
+C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler14\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.exe
+C:\Users\NgaT\Source\Repos\FA2017Event_Scheduler14\FA2017Event_Scheduler-master\FA2017Event_Scheduler-master\EventScheduleUI\obj\Debug\EventScheduleUI.pdb
