@@ -16,6 +16,7 @@ namespace EventScheduleUI
 {
     public partial class Login : Form
     {
+        public string username { get; set; }
         public Login()
         {
             InitializeComponent();
@@ -23,13 +24,13 @@ namespace EventScheduleUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // user Tamil password Yemen for participant
-            // user Swati password China for admin
+            // user Higgs password Communist for admin
             // NoT CaSe SeNsItIvE
             SqlConnection connection = new SqlConnection(@"Data Source=cis1.actx.edu;Initial Catalog=Project1;User ID=db1;Password=db10");
             //connection.ConnectionString = "Server=cis1.actx.edu;Database=Project1;User Id=db1;Password=db10;";
@@ -44,8 +45,13 @@ namespace EventScheduleUI
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")
             {
+                SqlDataAdapter sda3 = new SqlDataAdapter("Select Username FROM Users WHERE Username ='" + txtUsername.Text + "' and Passsword ='" + txtPassword.Text + "'", connection);
+                DataTable dt1 = new DataTable();
+                sda3.Fill(dt1);
+                Tabs f2 = new Tabs(dt1.Rows[0][0].ToString());
+                username = txtPassword.Text;
                 this.Hide();
-                Tabs f2 = new Tabs();
+
                 SqlDataAdapter sda2 = new SqlDataAdapter("Select Count(*) From Users where Username ='" + txtUsername.Text + "' and Passsword ='" + txtPassword.Text + "' and RoleID = 2", connection);
                 DataTable dt2 = new DataTable();
                 sda2.Fill(dt2);
@@ -53,15 +59,16 @@ namespace EventScheduleUI
                 {
                     f2.admin = true;
                 }
-            f2.ShowDialog();
+                f2.userName = username;
+                f2.ShowDialog();
                 Environment.Exit(0);
 
-              }
+            }
             else
             {
                 MessageBox.Show("Please Check your Username and Password");
             }
-}
+        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {

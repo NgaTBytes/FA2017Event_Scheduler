@@ -13,7 +13,7 @@ namespace EventScheduleUI
     public partial class ListView : Form
     {
 
-        public Tabs checkboxes = new Tabs();
+        //public Tabs checkboxes = new Tabs();
         public ListView()
         {
             InitializeComponent();

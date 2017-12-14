@@ -65,10 +65,16 @@
             this.chkStartTime = new System.Windows.Forms.CheckBox();
             this.chkRegisteredMaxAttendees = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabPaticipantsView = new System.Windows.Forms.TabPage();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.dgvParticipantView = new System.Windows.Forms.DataGridView();
             this.eventsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.project1DataSet = new EventScheduleUI.Project1DataSet();
             this.eventsTableAdapter = new EventScheduleUI.Project1DataSetTableAdapters.EventsTableAdapter();
             this.project1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabTab.SuspendLayout();
             this.tabFull.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFullView)).BeginInit();
@@ -76,6 +82,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeaser)).BeginInit();
             this.tabListView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListView)).BeginInit();
+            this.tabPaticipantsView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParticipantView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.project1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.project1DataSetBindingSource)).BeginInit();
@@ -86,20 +94,24 @@
             this.tabTab.Controls.Add(this.tabFull);
             this.tabTab.Controls.Add(this.tabTeaser);
             this.tabTab.Controls.Add(this.tabListView);
+            this.tabTab.Controls.Add(this.tabPaticipantsView);
             this.tabTab.Location = new System.Drawing.Point(25, 12);
             this.tabTab.Name = "tabTab";
             this.tabTab.SelectedIndex = 0;
-            this.tabTab.Size = new System.Drawing.Size(1343, 615);
+            this.tabTab.Size = new System.Drawing.Size(1534, 615);
             this.tabTab.TabIndex = 0;
             this.tabTab.Enter += new System.EventHandler(this.tabTab_Enter);
             // 
             // tabFull
             // 
+            this.tabFull.Controls.Add(this.label2);
+            this.tabFull.Controls.Add(this.btnRegister);
+            this.tabFull.Controls.Add(this.textBox1);
             this.tabFull.Controls.Add(this.dgvFullView);
             this.tabFull.Location = new System.Drawing.Point(4, 22);
             this.tabFull.Name = "tabFull";
             this.tabFull.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFull.Size = new System.Drawing.Size(1335, 589);
+            this.tabFull.Size = new System.Drawing.Size(1526, 589);
             this.tabFull.TabIndex = 0;
             this.tabFull.Text = "Full View";
             this.tabFull.UseVisualStyleBackColor = true;
@@ -121,10 +133,10 @@
             this.Attendees,
             this.Notes,
             this.Description});
-            this.dgvFullView.Location = new System.Drawing.Point(-26, 0);
+            this.dgvFullView.Location = new System.Drawing.Point(-29, 6);
             this.dgvFullView.Name = "dgvFullView";
             this.dgvFullView.ReadOnly = true;
-            this.dgvFullView.Size = new System.Drawing.Size(1355, 552);
+            this.dgvFullView.Size = new System.Drawing.Size(1549, 471);
             this.dgvFullView.TabIndex = 1;
             // 
             // EventName
@@ -204,7 +216,7 @@
             this.tabTeaser.Location = new System.Drawing.Point(4, 22);
             this.tabTeaser.Name = "tabTeaser";
             this.tabTeaser.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTeaser.Size = new System.Drawing.Size(1335, 589);
+            this.tabTeaser.Size = new System.Drawing.Size(1526, 589);
             this.tabTeaser.TabIndex = 1;
             this.tabTeaser.Text = "Teaser View";
             this.tabTeaser.UseVisualStyleBackColor = true;
@@ -219,7 +231,7 @@
             this.TeaserLocation,
             this.TeaserDate,
             this.TeaserCategory});
-            this.dgvTeaser.Location = new System.Drawing.Point(11, 7);
+            this.dgvTeaser.Location = new System.Drawing.Point(6, 0);
             this.dgvTeaser.Name = "dgvTeaser";
             this.dgvTeaser.ReadOnly = true;
             this.dgvTeaser.Size = new System.Drawing.Size(1211, 573);
@@ -273,7 +285,7 @@
             this.tabListView.Location = new System.Drawing.Point(4, 22);
             this.tabListView.Name = "tabListView";
             this.tabListView.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListView.Size = new System.Drawing.Size(1335, 589);
+            this.tabListView.Size = new System.Drawing.Size(1526, 589);
             this.tabListView.TabIndex = 2;
             this.tabListView.Text = "List View";
             this.tabListView.UseVisualStyleBackColor = true;
@@ -308,7 +320,7 @@
             this.dgvListView.Margin = new System.Windows.Forms.Padding(2);
             this.dgvListView.Name = "dgvListView";
             this.dgvListView.RowTemplate.Height = 28;
-            this.dgvListView.Size = new System.Drawing.Size(1244, 251);
+            this.dgvListView.Size = new System.Drawing.Size(1397, 251);
             this.dgvListView.TabIndex = 12;
             this.dgvListView.Visible = false;
             this.dgvListView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvListView_RowsRemoved);
@@ -444,6 +456,37 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "What do you want to see?";
             // 
+            // tabPaticipantsView
+            // 
+            this.tabPaticipantsView.Controls.Add(this.btnUpdate);
+            this.tabPaticipantsView.Controls.Add(this.dgvParticipantView);
+            this.tabPaticipantsView.Location = new System.Drawing.Point(4, 22);
+            this.tabPaticipantsView.Name = "tabPaticipantsView";
+            this.tabPaticipantsView.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPaticipantsView.Size = new System.Drawing.Size(1526, 589);
+            this.tabPaticipantsView.TabIndex = 3;
+            this.tabPaticipantsView.Text = "Participants View";
+            this.tabPaticipantsView.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.btnUpdate.Location = new System.Drawing.Point(6, 254);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(190, 63);
+            this.btnUpdate.TabIndex = 15;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // dgvParticipantView
+            // 
+            this.dgvParticipantView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvParticipantView.Location = new System.Drawing.Point(6, 3);
+            this.dgvParticipantView.Name = "dgvParticipantView";
+            this.dgvParticipantView.Size = new System.Drawing.Size(1006, 235);
+            this.dgvParticipantView.TabIndex = 0;
+            // 
             // eventsBindingSource
             // 
             this.eventsBindingSource.DataMember = "Events";
@@ -463,23 +506,54 @@
             this.project1DataSetBindingSource.DataSource = this.project1DataSet;
             this.project1DataSetBindingSource.Position = 0;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox1.Location = new System.Drawing.Point(454, 518);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 26);
+            this.textBox1.TabIndex = 2;
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnRegister.Location = new System.Drawing.Point(560, 515);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(94, 40);
+            this.btnRegister.TabIndex = 3;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Location = new System.Drawing.Point(92, 521);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(356, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Please enter the EventID you want to register for:";
+            // 
             // Tabs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1383, 617);
+            this.ClientSize = new System.Drawing.Size(1586, 617);
             this.Controls.Add(this.tabTab);
             this.Name = "Tabs";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Tabs_Load);
             this.tabTab.ResumeLayout(false);
             this.tabFull.ResumeLayout(false);
+            this.tabFull.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFullView)).EndInit();
             this.tabTeaser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeaser)).EndInit();
             this.tabListView.ResumeLayout(false);
             this.tabListView.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListView)).EndInit();
+            this.tabPaticipantsView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParticipantView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.project1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.project1DataSetBindingSource)).EndInit();
@@ -529,5 +603,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Attendees;
         private System.Windows.Forms.DataGridViewTextBoxColumn Notes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.TabPage tabPaticipantsView;
+        private System.Windows.Forms.DataGridView dgvParticipantView;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -14,27 +14,35 @@ namespace EventScheduleUI
 {
     public partial class Tabs : Form
     {
-       
+
         SqlConnection connection = new SqlConnection(@"Data Source=cis1.actx.edu;Initial Catalog=Project1;User ID=db1;Password=db10");
         SqlDataAdapter sda2;
+        SqlDataAdapter sda3;
         DataTable dt;
+        DataTable dt1;
 
         public bool admin { get; set; }
-       
-        public Tabs()
+        public string userName { get; set; }
+
+        public Tabs(string username)
         {
+            userName = username;
             InitializeComponent();
-            if(admin == false)
+            if (admin == true)
             {
                 tabTab.TabPages.Remove(tabListView);
             }
-                
+
             SqlConnection connection = new SqlConnection(@"Data Source=cis1.actx.edu;Initial Catalog=Project1;User ID=db1;Password=db10");
             connection.Open();
-            
+            sda3 = new SqlDataAdapter(@"SELECT Users.Username, Users.Passsword, Users.UserFirstName, Users.UserLastName, Users.UserAge, Users.RoleID
+            FROM Users", connection);
+            dt1 = new DataTable();
+            sda3.Fill(dt1);
+            dgvParticipantView.DataSource = dt1;
             using (SqlCommand getAllEventRecs = connection.CreateCommand())
             {
-                getAllEventRecs.CommandText = "SELECT EventName, Location, Status, StartDate, EndDate, StartTime, EndTime, AgeRequirement, EventDescription, EventNotes, MaxAttendees  FROM Events;";
+                getAllEventRecs.CommandText = "SELECT EventName, Location, Status, StartDate, EndDate, StartTime, EndTime, AgeRequirement, EventDescription, EventNotes, MaxAttendees, EventID FROM Events;";
 
                 using (SqlDataReader reader = getAllEventRecs.ExecuteReader())
                 {
@@ -53,16 +61,18 @@ namespace EventScheduleUI
                         dgvFullView.Rows[c].Cells[8].Value = reader.GetInt32(10);
                         dgvFullView.Rows[c].Cells[9].Value = reader.GetString(9);
                         dgvFullView.Rows[c].Cells[10].Value = reader.GetString(8);
+                        //dgvFullView.Rows[c].Cells[11].Value = reader.GetString(11);
+
                         c++;
-                        
+
                     }
                 }
             }
             using (SqlCommand getTeaserEventRecs = connection.CreateCommand())
             {
                 getTeaserEventRecs.CommandText = "SELECT EventName, Location, StartDate, CategoryDescription FROM Events INNER JOIN Categories ON Events.CategoryID = Categories.CategoryID;";
-           
-                
+
+
                 using (SqlDataReader reader = getTeaserEventRecs.ExecuteReader())
                 {
                     int c = 0;
@@ -78,13 +88,15 @@ namespace EventScheduleUI
                     }
                 }
             }
+
+            MessageBox.Show("Hello, " + userName);
         }
 
-        
+
 
         private void btnExecute_Click(object sender, EventArgs e)
         {
-            sda2 = new SqlDataAdapter(@"SELECT Events.EventID, Events.EventName, Events.Location, Events.Status, Events.StartDate, Events.EndDate, Events.StartTime, Events.EndTime, Events.AgeRequirement, Events.EventNotes, Events.EventDescription, Events.MaxAttendees, Events.Private, Events.Closed
+            sda2 = new SqlDataAdapter(@"SELECT Events.EventName, Events.Location, Events.Status, Events.StartDate, Events.EndDate, Events.StartTime, Events.EndTime, Events.AgeRequirement, Events.EventNotes, Events.EventDescription, Events.MaxAttendees, Events.CategoryID, Events.Private, Events.Closed
             FROM Events", connection);
             dt = new DataTable();
             sda2.Fill(dt);
@@ -103,7 +115,7 @@ namespace EventScheduleUI
             //this.dgvListView.Columns["eventNotesDataGridViewTextBoxColumn"].Visible = true;
             //this.dgvListView.Columns["eventDescriptionDataGridViewTextBoxColumn"].Visible = true;
             //this.dgvListView.Columns["AttendeesForm2"].Visible = true;
-            for(int i = 0; i < this.dgvListView.Columns.Count; i++)
+            for (int i = 0; i < this.dgvListView.Columns.Count; i++)
             {
                 this.dgvListView.Columns[i].Visible = true;
             }
@@ -136,9 +148,13 @@ namespace EventScheduleUI
             this.dgvListView.Columns[13].Width = 100;
 
 
+
             if (counter == 0)
             {
                 this.dgvListView.Columns[0].Visible = false;
+                this.dgvListView.Columns[13].Visible = false;
+                this.dgvListView.Columns[12].Visible = false;
+                this.dgvListView.Columns[14].Visible = false;
             }
             //tabListView.Controls.Find("")
 
@@ -173,7 +189,7 @@ namespace EventScheduleUI
             if (!chkAge.Checked)
             {
                 this.dgvListView.Columns[8].Visible = false;
-            } 
+            }
             if (!chkNotes.Checked)
             {
                 this.dgvListView.Columns[9].Visible = false;
@@ -186,28 +202,25 @@ namespace EventScheduleUI
             {
                 this.dgvListView.Columns[11].Visible = false;
             }
-            if(!chkRegisteredMaxAttendees.Checked)
-            {
-                this.dgvListView.Columns[12].Visible = false;
-            }
-            if(!chkRegisteredMaxAttendees.Checked)
-            {
-                this.dgvListView.Columns[13].Visible = false;
-            }
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            
+
         }
 
 
 
         private void tabTab_Enter(object sender, EventArgs e)
         {
+            if (admin == false)
+            {
 
+                tabTab.TabPages.Remove(tabListView);
+                tabTab.TabPages.Remove(tabPaticipantsView);
+            }
         }
-        
+
 
         private void Tabs_Load(object sender, EventArgs e)
         {
@@ -226,9 +239,19 @@ namespace EventScheduleUI
             SqlCommandBuilder builder;
             builder = new SqlCommandBuilder(sda2);
             sda2.Update(dt);
-           
+
         }
 
-        
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            SqlCommandBuilder builder;
+            builder = new SqlCommandBuilder(sda3);
+            sda3.Update(dt1);
+        }
+
+        private void dgvFullView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
