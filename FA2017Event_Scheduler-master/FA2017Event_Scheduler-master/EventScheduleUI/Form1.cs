@@ -51,7 +51,7 @@ namespace EventScheduleUI
                 DataTable dt1 = new DataTable();
                 sda3.Fill(dt1);
                 Tabs f2 = new Tabs(dt1.Rows[0][0].ToString());
-                username = txtPassword.Text;
+                username = txtUsername.Text;
                 this.Hide();
 
                 SqlDataAdapter sda2 = new SqlDataAdapter("Select Count(*) From Users where Username ='" + txtUsername.Text + "' and Passsword ='" + txtPassword.Text + "' and RoleID = 2", connection);

@@ -23,7 +23,7 @@ namespace EventScheduleUI
         DataTable dt1;
 
         public bool admin { get; set; }
-        string userName;
+        public string userName { get; set; } 
 
         public Tabs(string username)
         {
@@ -271,3 +271,4 @@ namespace EventScheduleUI
         }
     }
 }
+ 
