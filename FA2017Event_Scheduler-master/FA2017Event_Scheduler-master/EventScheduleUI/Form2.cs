@@ -17,6 +17,7 @@ namespace EventScheduleUI
     {
         //instantiate Admin
         Admin someAdmin = new Admin();
+        Particpant someParticipant = new Particpant();
 
         // data adapters, data tables, and connection strings
         SqlConnection connection = new SqlConnection(@"Data Source=cis1.actx.edu;Initial Catalog=Project1;User ID=db1;Password=db10");
@@ -300,13 +301,56 @@ namespace EventScheduleUI
             //try to parse the alleged event ID the user enters
             if (int.TryParse(txtEventID.Text, out eventID))
             {
-                //MessageBox.Show("heloo comrade" + userName + eventID.ToString());
-
+                bool work = false;
+                //MessageBox.Show("heloo comrade" + userName + eventID.ToString())
                 // run the code in the dll for register, sending aong the users username and the event ID they want to register for
-                someAdmin.Register(userName, eventID);
 
-                // if the whole shibang doesn't crash, display a confirmation message with no real backing behind it.
-                MessageBox.Show("You have registered for event " + eventID + ".");
+
+                //If admin
+                if(admin)
+                {
+                    //Try in case of shenanigans (look at the messagebox for specifics)
+                    try
+                    {
+                        // Call Admin.Register, passing in username and event ID
+                        someAdmin.Register(userName, eventID);
+
+                        // this variable will prevent the you have registered text from dislplaying
+                        work = true;
+                    }
+                    catch
+                    {
+                        //List of shenanigans
+                        MessageBox.Show("You may not register for this event.  \nEither it does not exist or you have already registered for it.");
+
+                    }
+
+                    // if the whole shibang doesn't crash, display a confirmation message with no real backing behind it.
+                    if (work)
+                    {
+                        MessageBox.Show("You have administratively registered for event " + eventID + ".");
+                    }
+                }
+                //if not admin
+                else
+                {
+                    try
+                    {
+                        someParticipant.Register(userName, eventID);
+                        work = true;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("You may not register for this event.  \nEither it does not exist or you have already registered for it.");
+
+                    }
+
+                    // if the whole shibang doesn't crash, display a confirmation message with no real backing behind it.
+                    if (work)
+                    {
+                        MessageBox.Show("You have registered for event " + eventID + ".");
+                    }
+                }
             }
             else
             {

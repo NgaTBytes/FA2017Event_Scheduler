@@ -21,7 +21,7 @@ namespace Event_2017FA_CSOS_1320_001
             using (SqlCommand getEventCount = connection.CreateCommand())
             {
                 //sql statement
-                getEventCount.CommandText = "SELECT COUNT(Event_Users.UserName), Events.MaxAttendees  FROM Project1.dbo.Event_Users INNER JOIN Project1.dbo.Events ON Event_Users.EventID = Events.EventID WHERE Event_Users.EventID = " + eventID;
+                getEventCount.CommandText = "SELECT COUNT(Event_Users.UserName), Events.MaxAttendees  FROM Project1.dbo.Event_Users INNER JOIN Project1.dbo.Events ON Event_Users.EventID = Events.EventID WHERE Event_Users.EventID = " + eventID + "GROUP BY Events.MaxAttendees;" ;
 
                 //start sql reader
                 using (SqlDataReader reader = getEventCount.ExecuteReader())
@@ -35,14 +35,23 @@ namespace Event_2017FA_CSOS_1320_001
                         // set count variable to count of users registered
                         count = reader.GetInt32(0);
                         maxAttendees = reader.GetInt32(1);
+                        
                     }
+                    reader.Close();
                     if (count < maxAttendees)
                     {
                         using (SqlCommand insertRegistration = connection.CreateCommand())
                         {
                             DateTime today = DateTime.Today;
                             insertRegistration.CommandText = "INSERT INTO Event_Users (EventID, UserName, DateRegistered) VALUES ( " + eventID + ", '" + userName + "', '" + today + "')";
-                            insertRegistration.ExecuteNonQuery();
+                            try
+                            {
+                                insertRegistration.ExecuteNonQuery();
+                            }
+                            catch
+                            {
+                               
+                            }
 
                         }
                     }
