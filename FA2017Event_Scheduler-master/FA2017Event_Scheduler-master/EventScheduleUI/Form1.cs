@@ -39,7 +39,7 @@ namespace EventScheduleUI
             //SqlCommand getLogin = connection.CreateCommand();
             //getLogin.CommandText = "SELECT * FROM Users WHERE Username='" + txtUsername.Text + "' AND Password='" + txtPassword.Text + "';";
             //getLogin.CommandText
-            
+
             SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Users where Username ='" + txtUsername.Text + "' and Passsword ='" + txtPassword.Text + "'", connection);
             DataTable dt = new DataTable();
             sda.Fill(dt);

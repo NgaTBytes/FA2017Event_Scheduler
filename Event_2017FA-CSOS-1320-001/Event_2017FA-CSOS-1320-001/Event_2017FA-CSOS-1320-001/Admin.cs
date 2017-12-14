@@ -3,42 +3,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+// using statments
+using System.Data.SqlClient;
+using System.Data.Sql;
 namespace Event_2017FA_CSOS_1320_001
 {
     public class Admin : User
     {
-        //public void CreateEvent()
-        //{
-        //    bool isClosed = false;
-        //    if(isClosed)
-        //    {
-        //        Close someEvent = new Close();
-        //    }
-        //    else
-        //    {
-        //        Opened someEvent = new Opened();
-        //    }
-        //}
+        // sql connection string
+        SqlConnection connection = new SqlConnection(@"Data Source=cis1.actx.edu;Initial Catalog=Project1;User ID=db1;Password=db10");
 
-        //public void DestroyEvent()
-        //{
-        //    throw new System.NotImplementedException();
-        //}
-
-        //public void ViewEvent()
-        //{
-        //    throw new System.NotImplementedException();
-        //}
-
-        //public void EventRules()
-        //{
-        //    throw new System.NotImplementedException();
-        //}
-        // Method to allow the admin to register
+        // Method to allow the user to register.  called by EventSchedule UI Event     btnRegister_Click
         public override void Register(string userName, int eventID)
         {
-           
+            // initialize sqlcommand object
+            using (SqlCommand insertRegistration = connection.CreateCommand())
+            {
+                // create an datetmie objectthat represents todays date
+                DateTime today = DateTime.Today;
+
+                //open connnection
+                connection.Open();
+                // try in case of shenanigans
+                try
+                {
+                    // create insert statement based on info passed into the method
+                    insertRegistration.CommandText = "insert into Event_Users values (" + eventID + ", '" + userName + "', '" + today + "');";
+
+                    // execute the insert statement
+                    insertRegistration.ExecuteNonQuery();
+
+                }
+                catch
+                {
+
+                }
+                // close connection 
+                connection.Close();
+            }
+
         }
- 
     }
 }
