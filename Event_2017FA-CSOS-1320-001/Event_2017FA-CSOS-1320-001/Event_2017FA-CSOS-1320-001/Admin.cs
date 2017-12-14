@@ -16,30 +16,47 @@ namespace Event_2017FA_CSOS_1320_001
         // Method to allow the user to register.  called by EventSchedule UI Event     btnRegister_Click
         public override void Register(string userName, int eventID)
         {
-            // initialize sqlcommand object
-            using (SqlCommand insertRegistration = connection.CreateCommand())
+
+            connection.Open();
+            using (SqlCommand getEventCount = connection.CreateCommand())
             {
-                // create an datetmie objectthat represents todays date
-                DateTime today = DateTime.Today;
+                //sql statement
+                getEventCount.CommandText = "SELECT COUNT(Event_Users.UserName), Events.MaxAttendees  FROM Project1.dbo.Event_Users INNER JOIN Project1.dbo.Events ON Event_Users.EventID = Events.EventID WHERE Event_Users.EventID = " + eventID;
 
-                //open connnection
-                connection.Open();
-                // try in case of shenanigans
-                try
+                //start sql reader
+                using (SqlDataReader reader = getEventCount.ExecuteReader())
                 {
-                    // create insert statement based on info passed into the method
-                    insertRegistration.CommandText = "insert into Event_Users values (" + eventID + ", '" + userName + "', '" + today + "');";
+                    // initialize count variable
+                    int count = 0;
+                    int maxAttendees = 0;
 
-                    // execute the insert statement
-                    insertRegistration.ExecuteNonQuery();
+                    while (reader.Read())
+                    {
+                        // set count variable to count of users registered
+                        count = reader.GetInt32(0);
+                        maxAttendees = reader.GetInt32(1);
+                    }
+                    if (count < maxAttendees)
+                    {
+                        using (SqlCommand insertRegistration = connection.CreateCommand())
+                        {
+                            DateTime today = DateTime.Today;
+                            insertRegistration.CommandText = "INSERT INTO Event_Users (EventID, UserName, DateRegistered) VALUES ( " + eventID + ", '" + userName + "', '" + today + "')";
+                            insertRegistration.ExecuteNonQuery();
+
+                        }
+                    }
+                    else
+                    {
+                        using (SqlCommand insertWaitlists = connection.CreateCommand())
+                        {
+                            insertWaitlists.CommandText = "INSERT INTO Waitlists (EventID, UserName) VALUES ( " + eventID + ", '" + userName + "');";
+                            insertWaitlists.ExecuteNonQuery();
+
+                        }
+                    }
 
                 }
-                catch
-                {
-
-                }
-                // close connection 
-                connection.Close();
             }
 
         }
