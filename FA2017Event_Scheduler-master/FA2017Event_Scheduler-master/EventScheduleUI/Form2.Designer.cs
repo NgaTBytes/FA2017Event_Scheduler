@@ -492,7 +492,7 @@
             // 
             // Logout
             // 
-            this.Logout.BackColor = System.Drawing.Color.Red;
+            this.Logout.BackColor = System.Drawing.Color.HotPink;
             this.Logout.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.Logout.FlatAppearance.BorderSize = 0;
             this.Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
