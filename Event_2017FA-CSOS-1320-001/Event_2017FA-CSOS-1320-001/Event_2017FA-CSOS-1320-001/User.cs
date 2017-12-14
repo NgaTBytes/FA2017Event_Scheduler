@@ -17,17 +17,10 @@ namespace Event_2017FA_CSOS_1320_001
         public int Age
         { get; set; }
 
-        public virtual void Register(string firstName, string lastName, int age)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-            Age = age;
-        }
+        public abstract void Register(string firstName, int lastName);
+        
 
-        public virtual void Unregister()
-        {
 
-        }
         // Method so that the open events will show the info for 
         // participants to view the event.
         public void DetailedOverview()

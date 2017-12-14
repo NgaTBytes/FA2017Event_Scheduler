@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.tabTab = new System.Windows.Forms.TabControl();
             this.tabFull = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.txtEventID = new System.Windows.Forms.TextBox();
             this.dgvFullView = new System.Windows.Forms.DataGridView();
             this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,9 +75,6 @@
             this.project1DataSet = new EventScheduleUI.Project1DataSet();
             this.eventsTableAdapter = new EventScheduleUI.Project1DataSetTableAdapters.EventsTableAdapter();
             this.project1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnRegister = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabTab.SuspendLayout();
             this.tabFull.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFullView)).BeginInit();
@@ -106,7 +106,7 @@
             // 
             this.tabFull.Controls.Add(this.label2);
             this.tabFull.Controls.Add(this.btnRegister);
-            this.tabFull.Controls.Add(this.textBox1);
+            this.tabFull.Controls.Add(this.txtEventID);
             this.tabFull.Controls.Add(this.dgvFullView);
             this.tabFull.Location = new System.Drawing.Point(4, 22);
             this.tabFull.Name = "tabFull";
@@ -115,6 +115,35 @@
             this.tabFull.TabIndex = 0;
             this.tabFull.Text = "Full View";
             this.tabFull.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Location = new System.Drawing.Point(92, 521);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(356, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Please enter the EventID you want to register for:";
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnRegister.Location = new System.Drawing.Point(560, 515);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(94, 40);
+            this.btnRegister.TabIndex = 3;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // txtEventID
+            // 
+            this.txtEventID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtEventID.Location = new System.Drawing.Point(454, 518);
+            this.txtEventID.Name = "txtEventID";
+            this.txtEventID.Size = new System.Drawing.Size(100, 26);
+            this.txtEventID.TabIndex = 2;
             // 
             // dgvFullView
             // 
@@ -506,34 +535,6 @@
             this.project1DataSetBindingSource.DataSource = this.project1DataSet;
             this.project1DataSetBindingSource.Position = 0;
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox1.Location = new System.Drawing.Point(454, 518);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 2;
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnRegister.Location = new System.Drawing.Point(560, 515);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(94, 40);
-            this.btnRegister.TabIndex = 3;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(92, 521);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(356, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Please enter the EventID you want to register for:";
-            // 
             // Tabs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,6 +609,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEventID;
     }
 }

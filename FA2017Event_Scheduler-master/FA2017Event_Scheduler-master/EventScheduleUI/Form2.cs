@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using System.Data.SqlClient;
 using System.Data.Sql;
+using Event_2017FA_CSOS_1320_001;
 namespace EventScheduleUI
 {
     public partial class Tabs : Form
     {
-
+        Admin someAdmin = new Admin();
+        
         SqlConnection connection = new SqlConnection(@"Data Source=cis1.actx.edu;Initial Catalog=Project1;User ID=db1;Password=db10");
         SqlDataAdapter sda2;
         SqlDataAdapter sda3;
@@ -22,7 +23,7 @@ namespace EventScheduleUI
         DataTable dt1;
 
         public bool admin { get; set; }
-        public string userName { get; set; }
+        string userName;
 
         public Tabs(string username)
         {
@@ -64,7 +65,8 @@ namespace EventScheduleUI
                         //dgvFullView.Rows[c].Cells[11].Value = reader.GetString(11);
 
                         c++;
-
+                        
+                       
                     }
                 }
             }
@@ -88,7 +90,7 @@ namespace EventScheduleUI
                     }
                 }
             }
-
+            
             MessageBox.Show("Hello, " + userName);
         }
 
@@ -252,6 +254,20 @@ namespace EventScheduleUI
         private void dgvFullView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            int eventID = 0;
+            if (int.TryParse(txtEventID.Text, out eventID))
+            {
+                MessageBox.Show("heloo comrade" + userName + eventID.ToString());
+                //someAdmin.Register(userName, eventID);
+            }
+            else
+            {
+                MessageBox.Show("Enter a number, please sir and/or madam.");
+            }
         }
     }
 }
