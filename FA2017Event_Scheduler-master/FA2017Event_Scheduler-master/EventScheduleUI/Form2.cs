@@ -55,7 +55,7 @@ namespace EventScheduleUI
             using (SqlCommand getAllEventRecs = connection.CreateCommand())
             {
                 // SQL statement
-                getAllEventRecs.CommandText = "SELECT EventName, Location, Status, StartDate, EndDate, StartTime, EndTime, AgeRequirement, EventDescription, EventNotes, MaxAttendees FROM Events;";
+                getAllEventRecs.CommandText = "SELECT EventID, EventName, Location, Status, StartDate, EndDate, StartTime, EndTime, AgeRequirement, EventDescription, EventNotes, MaxAttendees FROM Events;";
 
                 //start sql reader
                 using (SqlDataReader reader = getAllEventRecs.ExecuteReader())
@@ -67,17 +67,18 @@ namespace EventScheduleUI
                     {
                         //populate Full View
                         dgvFullView.Rows.Add();
-                        dgvFullView.Rows[c].Cells[0].Value = reader.GetString(0);
+                        dgvFullView.Rows[c].Cells[0].Value = reader.GetInt32(0);
                         dgvFullView.Rows[c].Cells[1].Value = reader.GetString(1);
                         dgvFullView.Rows[c].Cells[2].Value = reader.GetString(2);
-                        dgvFullView.Rows[c].Cells[3].Value = reader.GetDateTime(3);
+                        dgvFullView.Rows[c].Cells[3].Value = reader.GetString(3);
                         dgvFullView.Rows[c].Cells[4].Value = reader.GetDateTime(4);
-                        dgvFullView.Rows[c].Cells[5].Value = reader.GetTimeSpan(5);
+                        dgvFullView.Rows[c].Cells[5].Value = reader.GetDateTime(5);
                         dgvFullView.Rows[c].Cells[6].Value = reader.GetTimeSpan(6);
-                        dgvFullView.Rows[c].Cells[7].Value = reader.GetInt32(7);
-                        dgvFullView.Rows[c].Cells[8].Value = reader.GetInt32(10);
-                        dgvFullView.Rows[c].Cells[9].Value = reader.GetString(9);
-                        dgvFullView.Rows[c].Cells[10].Value = reader.GetString(8);
+                        dgvFullView.Rows[c].Cells[7].Value = reader.GetTimeSpan(7);
+                        dgvFullView.Rows[c].Cells[8].Value = reader.GetInt32(8);
+                        dgvFullView.Rows[c].Cells[9].Value = reader.GetInt32(11);
+                        dgvFullView.Rows[c].Cells[10].Value = reader.GetString(10);
+                        dgvFullView.Rows[c].Cells[11].Value = reader.GetString(9);
 
 
                         c++;
@@ -166,6 +167,7 @@ namespace EventScheduleUI
             }
 
             //slight formatting, adjusting the width of columns just a bit
+            
             this.dgvListView.Columns[0].Width = 75;
             this.dgvListView.Columns[1].Width = 130;
             this.dgvListView.Columns[2].Width = 80;
@@ -177,10 +179,10 @@ namespace EventScheduleUI
             this.dgvListView.Columns[8].Width = 80;
             this.dgvListView.Columns[9].Width = 100;
             this.dgvListView.Columns[10].Width = 250;
-            this.dgvListView.Columns[9].Width = 100;
-            this.dgvListView.Columns[11].Width = 80;
+            this.dgvListView.Columns[11].Width = 100;
             this.dgvListView.Columns[12].Width = 80;
             this.dgvListView.Columns[13].Width = 80;
+            this.dgvListView.Columns[14].Width = 80;
 
 
             // if that counter from before is still zero, then nothing is checked, and we want to keep our default columns from showing.

@@ -35,17 +35,6 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.txtEventID = new System.Windows.Forms.TextBox();
             this.dgvFullView = new System.Windows.Forms.DataGridView();
-            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageRequirement2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Attendees = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabTeaser = new System.Windows.Forms.TabPage();
             this.dgvTeaser = new System.Windows.Forms.DataGridView();
             this.TeaserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +66,18 @@
             this.eventsTableAdapter = new EventScheduleUI.Project1DataSetTableAdapters.EventsTableAdapter();
             this.project1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Logout = new System.Windows.Forms.Button();
+            this.EventIDfull = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageRequirement2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Attendees = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabTab.SuspendLayout();
             this.tabFull.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFullView)).BeginInit();
@@ -151,8 +152,11 @@
             // 
             this.dgvFullView.AllowUserToAddRows = false;
             this.dgvFullView.AllowUserToDeleteRows = false;
+            this.dgvFullView.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
+            this.dgvFullView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFullView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFullView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EventIDfull,
             this.EventName,
             this.Location,
             this.Status,
@@ -170,77 +174,6 @@
             this.dgvFullView.Size = new System.Drawing.Size(1549, 471);
             this.dgvFullView.TabIndex = 1;
             // 
-            // EventName
-            // 
-            this.EventName.HeaderText = "Event Name";
-            this.EventName.Name = "EventName";
-            this.EventName.ReadOnly = true;
-            this.EventName.Width = 200;
-            // 
-            // Location
-            // 
-            this.Location.HeaderText = "Location";
-            this.Location.Name = "Location";
-            this.Location.ReadOnly = true;
-            this.Location.Width = 150;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
-            // StartDate
-            // 
-            this.StartDate.HeaderText = "Start Date";
-            this.StartDate.Name = "StartDate";
-            this.StartDate.ReadOnly = true;
-            this.StartDate.Width = 75;
-            // 
-            // EndDate
-            // 
-            this.EndDate.HeaderText = "End Date";
-            this.EndDate.Name = "EndDate";
-            this.EndDate.ReadOnly = true;
-            this.EndDate.Width = 75;
-            // 
-            // StartTime
-            // 
-            this.StartTime.HeaderText = "Start Time";
-            this.StartTime.Name = "StartTime";
-            this.StartTime.ReadOnly = true;
-            // 
-            // EndTime
-            // 
-            this.EndTime.HeaderText = "End Time";
-            this.EndTime.Name = "EndTime";
-            this.EndTime.ReadOnly = true;
-            // 
-            // ageRequirement2
-            // 
-            this.ageRequirement2.HeaderText = "Age Requirement";
-            this.ageRequirement2.Name = "ageRequirement2";
-            this.ageRequirement2.ReadOnly = true;
-            // 
-            // Attendees
-            // 
-            this.Attendees.HeaderText = "Max  Attendees";
-            this.Attendees.Name = "Attendees";
-            this.Attendees.ReadOnly = true;
-            // 
-            // Notes
-            // 
-            this.Notes.HeaderText = "Notes";
-            this.Notes.Name = "Notes";
-            this.Notes.ReadOnly = true;
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            this.Description.Width = 400;
-            // 
             // tabTeaser
             // 
             this.tabTeaser.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -256,12 +189,15 @@
             // 
             this.dgvTeaser.AllowUserToAddRows = false;
             this.dgvTeaser.AllowUserToDeleteRows = false;
+            this.dgvTeaser.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
+            this.dgvTeaser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTeaser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTeaser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TeaserName,
             this.TeaserLocation,
             this.TeaserDate,
             this.TeaserCategory});
+            this.dgvTeaser.GridColor = System.Drawing.Color.Black;
             this.dgvTeaser.Location = new System.Drawing.Point(6, 0);
             this.dgvTeaser.Name = "dgvTeaser";
             this.dgvTeaser.ReadOnly = true;
@@ -334,13 +270,14 @@
             // 
             // btnUpdateList
             // 
+            this.btnUpdateList.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnUpdateList.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.btnUpdateList.Location = new System.Drawing.Point(964, 368);
             this.btnUpdateList.Name = "btnUpdateList";
             this.btnUpdateList.Size = new System.Drawing.Size(190, 63);
             this.btnUpdateList.TabIndex = 14;
             this.btnUpdateList.Text = "Update";
-            this.btnUpdateList.UseVisualStyleBackColor = true;
+            this.btnUpdateList.UseVisualStyleBackColor = false;
             this.btnUpdateList.Visible = false;
             this.btnUpdateList.Click += new System.EventHandler(this.btnUpdateList_Click);
             // 
@@ -358,6 +295,8 @@
             // dgvListView
             // 
             this.dgvListView.AllowUserToOrderColumns = true;
+            this.dgvListView.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
+            this.dgvListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListView.Location = new System.Drawing.Point(29, 69);
             this.dgvListView.Margin = new System.Windows.Forms.Padding(2);
@@ -523,10 +462,13 @@
             // 
             // dgvParticipantView
             // 
+            this.dgvParticipantView.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
+            this.dgvParticipantView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvParticipantView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvParticipantView.GridColor = System.Drawing.Color.Black;
             this.dgvParticipantView.Location = new System.Drawing.Point(6, 3);
             this.dgvParticipantView.Name = "dgvParticipantView";
-            this.dgvParticipantView.Size = new System.Drawing.Size(659, 235);
+            this.dgvParticipantView.Size = new System.Drawing.Size(659, 370);
             this.dgvParticipantView.TabIndex = 0;
             // 
             // eventsBindingSource
@@ -562,6 +504,83 @@
             this.Logout.Text = "Logout";
             this.Logout.UseVisualStyleBackColor = false;
             this.Logout.Click += new System.EventHandler(this.Logout_Click);
+            // 
+            // EventIDfull
+            // 
+            this.EventIDfull.HeaderText = "Event ID";
+            this.EventIDfull.Name = "EventIDfull";
+            this.EventIDfull.ReadOnly = true;
+            // 
+            // EventName
+            // 
+            this.EventName.HeaderText = "Event Name";
+            this.EventName.Name = "EventName";
+            this.EventName.ReadOnly = true;
+            this.EventName.Width = 200;
+            // 
+            // Location
+            // 
+            this.Location.HeaderText = "Location";
+            this.Location.Name = "Location";
+            this.Location.ReadOnly = true;
+            this.Location.Width = 150;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // StartDate
+            // 
+            this.StartDate.HeaderText = "Start Date";
+            this.StartDate.Name = "StartDate";
+            this.StartDate.ReadOnly = true;
+            this.StartDate.Width = 75;
+            // 
+            // EndDate
+            // 
+            this.EndDate.HeaderText = "End Date";
+            this.EndDate.Name = "EndDate";
+            this.EndDate.ReadOnly = true;
+            this.EndDate.Width = 75;
+            // 
+            // StartTime
+            // 
+            this.StartTime.HeaderText = "Start Time";
+            this.StartTime.Name = "StartTime";
+            this.StartTime.ReadOnly = true;
+            // 
+            // EndTime
+            // 
+            this.EndTime.HeaderText = "End Time";
+            this.EndTime.Name = "EndTime";
+            this.EndTime.ReadOnly = true;
+            // 
+            // ageRequirement2
+            // 
+            this.ageRequirement2.HeaderText = "Age Requirement";
+            this.ageRequirement2.Name = "ageRequirement2";
+            this.ageRequirement2.ReadOnly = true;
+            // 
+            // Attendees
+            // 
+            this.Attendees.HeaderText = "Max  Attendees";
+            this.Attendees.Name = "Attendees";
+            this.Attendees.ReadOnly = true;
+            // 
+            // Notes
+            // 
+            this.Notes.HeaderText = "Notes";
+            this.Notes.Name = "Notes";
+            this.Notes.ReadOnly = true;
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.Width = 400;
             // 
             // Tabs
             // 
@@ -622,6 +641,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TeaserDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn TeaserCategory;
         private System.Windows.Forms.DataGridView dgvFullView;
+        private System.Windows.Forms.TabPage tabPaticipantsView;
+        private System.Windows.Forms.DataGridView dgvParticipantView;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.TextBox txtEventID;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button Logout;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventIDfull;
         private System.Windows.Forms.DataGridViewTextBoxColumn EventName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Location;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
@@ -633,13 +661,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Attendees;
         private System.Windows.Forms.DataGridViewTextBoxColumn Notes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.TabPage tabPaticipantsView;
-        private System.Windows.Forms.DataGridView dgvParticipantView;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.TextBox txtEventID;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button Logout;
     }
 }

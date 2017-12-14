@@ -30,7 +30,9 @@ namespace EventScheduleUI
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // user Tamil password Yemen for participant
-            // user Higgs password Communist for admin
+            // user Higgs password Communist for admin  This was dustin's idea - signed everyone else
+
+
             // NoT CaSe SeNsItIvE
             SqlConnection connection = new SqlConnection(@"Data Source=cis1.actx.edu;Initial Catalog=Project1;User ID=db1;Password=db10");
             //connection.ConnectionString = "Server=cis1.actx.edu;Database=Project1;User Id=db1;Password=db10;";
