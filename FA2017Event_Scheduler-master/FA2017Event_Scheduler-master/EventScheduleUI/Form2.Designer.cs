@@ -106,6 +106,7 @@
             // 
             // tabFull
             // 
+            this.tabFull.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.tabFull.Controls.Add(this.label2);
             this.tabFull.Controls.Add(this.btnRegister);
             this.tabFull.Controls.Add(this.txtEventID);
@@ -116,7 +117,6 @@
             this.tabFull.Size = new System.Drawing.Size(1526, 539);
             this.tabFull.TabIndex = 0;
             this.tabFull.Text = "Full View";
-            this.tabFull.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -243,6 +243,7 @@
             // 
             // tabTeaser
             // 
+            this.tabTeaser.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.tabTeaser.Controls.Add(this.dgvTeaser);
             this.tabTeaser.Location = new System.Drawing.Point(4, 22);
             this.tabTeaser.Name = "tabTeaser";
@@ -250,7 +251,6 @@
             this.tabTeaser.Size = new System.Drawing.Size(1526, 539);
             this.tabTeaser.TabIndex = 1;
             this.tabTeaser.Text = "Teaser View";
-            this.tabTeaser.UseVisualStyleBackColor = true;
             // 
             // dgvTeaser
             // 
@@ -298,6 +298,7 @@
             // 
             // tabListView
             // 
+            this.tabListView.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.tabListView.Controls.Add(this.label3);
             this.tabListView.Controls.Add(this.btnUpdateList);
             this.tabListView.Controls.Add(this.chkAge);
@@ -320,7 +321,6 @@
             this.tabListView.Size = new System.Drawing.Size(1526, 539);
             this.tabListView.TabIndex = 2;
             this.tabListView.Text = "List View";
-            this.tabListView.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -500,6 +500,7 @@
             // 
             // tabPaticipantsView
             // 
+            this.tabPaticipantsView.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.tabPaticipantsView.Controls.Add(this.btnUpdate);
             this.tabPaticipantsView.Controls.Add(this.dgvParticipantView);
             this.tabPaticipantsView.Location = new System.Drawing.Point(4, 22);
@@ -508,7 +509,6 @@
             this.tabPaticipantsView.Size = new System.Drawing.Size(1526, 539);
             this.tabPaticipantsView.TabIndex = 3;
             this.tabPaticipantsView.Text = "Participants View";
-            this.tabPaticipantsView.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
@@ -567,7 +567,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(1586, 617);
             this.Controls.Add(this.Logout);
             this.Controls.Add(this.tabTab);
